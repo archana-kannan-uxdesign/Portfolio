@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WayATL — Case study — Archana Kannan</title>
+<meta name="description" content="WayATL: a multilingual wayfinding web app for fans at the 2026 FIFA World Cup in Atlanta. UI/UX case study by Archana Kannan.">
+<link rel="canonical" href="https://archanakannan.org/wayatl">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Archana Kannan">
+<meta property="og:title" content="WayATL — Case study — Archana Kannan">
+<meta property="og:description" content="WayATL: a multilingual wayfinding web app for fans at the 2026 FIFA World Cup in Atlanta. UI/UX case study by Archana Kannan.">
+<meta property="og:url" content="https://archanakannan.org/wayatl">
+<meta property="og:image" content="https://archanakannan.org/assets/c2cc7ef31978651b7a8eafd556bc45b3.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="icon" type="image/png" href="/assets/2f3749e4e9e6d088b02340126ade3fc6.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,600;1,600&amp;family=Syne:wght@800&amp;display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/motion.css">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+body{margin:0}
+.ak-heading h1.ak-heading__title{overflow-wrap:anywhere}
+.ph{background:var(--bg-sunken);border:1px dashed var(--border-strong);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;box-sizing:border-box;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.ph-k{color:var(--text-primary)}
+.ph.has-img{padding:0;border:0;overflow:clip;display:block}
+.ph.has-img img{display:block;width:100%;height:100%;object-fit:cover}
+.pad{padding-left:clamp(24px,4vw,64px);padding-right:clamp(24px,4vw,64px)}
+.sec{padding-top:var(--space-9);display:flex;flex-direction:column;gap:var(--space-6)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-6) var(--space-7)}
+.lede{margin:0;font-size:20px;font-weight:300;line-height:1.5;color:var(--text-secondary);max-width:46ch}
+.hmw{margin:0;font-family:var(--font-sub);font-weight:600;font-size:24px;line-height:1.25;color:var(--text-strong)}
+/* Problem section: full-width rule under the heading */
+#problem > .ak-case{max-width:none}
+#problem > .ak-case .ak-case__body{max-width:var(--measure)}
+/* Slanted stat panels (Problem section) */
+.slants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.slant{--k:14%;container-type:inline-size;min-height:clamp(220px,22vw,300px);clip-path:polygon(var(--k) 0,100% 0,calc(100% - var(--k)) 100%,0 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-4);padding:var(--space-6) calc(var(--k) + var(--space-3));box-sizing:border-box;text-align:center;color:var(--text-strong)}
+.slant-n{font-family:var(--font-display);font-weight:800;font-size:clamp(32px,calc(19cqi - 6px),64px);line-height:.95;letter-spacing:-0.01em;white-space:nowrap}
+.slant-l{margin:0;font-size:16px;line-height:1.4;max-width:18ch}
+/* FIFA World Cup colours, project-specific (from the original WayATL deck), deepened slightly so white text passes AA */
+.slant--blue{background:var(--wayatl-blue-primary)}
+.slant--green{background:var(--wayatl-green-primary)}
+.slant--red{background:var(--wayatl-red-primary)}
+@media (max-width:767px){.slants{grid-template-columns:minmax(0,1fr)}.slant{--k:8%;min-height:180px}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){.slant{animation:ak-rise linear both;animation-timeline:view();animation-range:cover 0% cover 100%}}}
+/* Opportunity section */
+.opp-lede{margin:0;font-family:var(--font-sub);font-weight:600;font-size:clamp(24px,2.4vw,32px);line-height:1.2;color:var(--text-strong);max-width:none;text-wrap:pretty}
+.opp-lede>span{display:block}
+.opp-body{margin:0;font-size:16px;line-height:1.6;color:var(--text-secondary);max-width:var(--measure)}
+.brief{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);margin:0;padding:0;list-style:none}
+.brief li{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-5);background:var(--surface);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.brief-k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft)}
+.brief-t{margin:0;font-family:var(--font-sub);font-weight:600;font-size:24px;line-height:1.2;color:var(--text-strong)}
+.brief-d{margin:0;font-size:14px;line-height:1.55;color:var(--text-secondary)}
+.flows{display:flex;flex-direction:column;gap:var(--space-5);padding:var(--space-6);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.flow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:var(--space-4);align-items:center}
+.flow-k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.flow ol{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);margin:0;padding:0;list-style:none}
+.flow li{display:inline-flex;align-items:center;gap:var(--space-2);font-size:14px;color:var(--text-secondary)}
+.flow li+li::before{content:"\2192";color:var(--text-muted)}
+.step{display:inline-flex;align-items:center;height:36px;padding:0 var(--space-4);border-radius:var(--radius-pill);border:var(--border-width) solid var(--border-subtle);white-space:nowrap}
+.step--set{background:var(--text-strong);border-color:var(--text-strong);color:var(--bg);font-weight:600}
+.step--late{border-style:dashed;color:var(--text-muted)}
+.swap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6) var(--space-7);align-items:start}
+.swap-k{display:block;margin-bottom:var(--space-3);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.swap-q{margin:0;font-family:var(--font-sub);font-weight:600;font-size:clamp(24px,2.4vw,32px);line-height:1.2}
+.swap-q--old{color:var(--text-muted);text-decoration:line-through;text-decoration-thickness:2px}
+.swap-q--new{color:var(--text-strong)}
+@media (max-width:767px){.brief,.swap{grid-template-columns:minmax(0,1fr)}.flow{grid-template-columns:minmax(0,1fr);gap:var(--space-2)}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){.opp-lede,.opp-body,.brief li,.flows,.swap>div{animation:ak-rise linear both;animation-timeline:view();animation-range:cover 0% cover 100%}}}
+/* Research: findings stacked on the left, affinity map on the right */
+.rs-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-6) var(--space-7);align-items:start}
+.rs-stack{display:flex;flex-direction:column;gap:var(--space-6)}
+/* Insight titles use the DS subhead-sm style (Forma 600 · 24/1.2) */
+.ins-h{margin:0 0 var(--space-2);font-family:var(--font-sub);font-weight:600;font-size:24px;line-height:1.2;color:var(--text-strong)}
+@media (max-width:767px){.rs-split{grid-template-columns:minmax(0,1fr)}}
+/* Ideation: wireframe wall, same parallax behaviour as the About photo wall (columns drift in opposite directions on scroll) */
+.wgal{aspect-ratio:2.1 / 1;min-height:0;grid-template-rows:minmax(0,1fr);overflow:clip;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);view-timeline-name:--wgal;border-radius:var(--radius-md)}
+.wcol{display:flex;flex-direction:column;gap:var(--space-3);min-width:0;align-self:start;will-change:transform}
+.wcol-alt{transform:translateY(-16%)}
+.wimg{aspect-ratio:4 / 3;flex:none;background:var(--bg-sunken);border:1px dashed var(--border-strong);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.wimg:nth-child(even){background:var(--surface)}
+.wimg.has-img{padding:var(--space-2);border:var(--border-width) solid var(--border-subtle);background:var(--surface);overflow:clip;display:block}
+.wimg.has-img img{display:block;width:100%;height:100%;object-fit:contain}
+/* The wall's height scales with its width (aspect-ratio), so the window always stays inside the columns: columns are ~0.75x the wall's width tall, the window is ~0.48x, and the 32% drift never runs past a column's end at any window size */
+@keyframes wgal-up{from{transform:translateY(0)}to{transform:translateY(-32%)}}
+@keyframes wgal-down{from{transform:translateY(-32%)}to{transform:translateY(0)}}
+
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){
+.wgal .wcol{animation:wgal-up linear both;animation-timeline:--wgal;animation-range:cover 0% cover 100%}
+.wgal .wcol-alt{animation-name:wgal-down}
+}}
+/* Ideation: features & structure */
+.ia-wrap{position:relative;display:flex;flex-direction:column;gap:var(--space-6);margin-top:var(--space-6);padding-top:var(--space-5)}
+/* Divider matches the Process block's divider: as wide as the text block (the DS measure), not the whole page */
+.ia-wrap::before{content:"";position:absolute;top:0;left:0;width:min(100%,var(--measure));border-top:var(--border-width) solid var(--border-subtle)}
+.ia-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5)}
+.ia-fig{margin:0;display:flex;flex-direction:column;gap:var(--space-3);min-width:0}
+.ia-cap{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+@media (max-width:767px){.ia-grid{grid-template-columns:minmax(0,1fr)}}
+/* Ideation: final flow diagram */
+.ff-panel{padding:var(--space-6);background:var(--surface);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.ff-panel{container-type:inline-size}
+.ff-scroll{overflow-x:auto}
+.ff{--line:var(--border-strong);display:grid;grid-template-columns:auto 56px max-content;min-width:760px;width:max-content;margin-inline:auto}
+.ff-home{grid-column:1;grid-row:2;align-self:center;display:flex;flex-direction:column;align-items:center;gap:var(--space-1);padding:var(--space-4) var(--space-5);border:1.5px solid var(--text-strong);border-radius:var(--radius-md);background:var(--bg)}
+.ff-home-t{font-family:var(--font-sub);font-weight:600;font-size:24px;line-height:1.1;color:var(--text-strong)}
+.ff-home-s{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.ff-row{grid-row:var(--r)}.ff-spine{grid-row:var(--r);grid-column:2;position:relative;align-self:stretch}
+.ff-spine i{position:absolute;display:block}
+.ff-spine .v{left:22px;width:0;border-left:1.5px solid var(--line);top:0;bottom:0}
+.ff-first .v{top:50%}.ff-last .v{bottom:50%}
+.ff-spine .h{left:22px;right:6px;top:50%;border-top:1.5px solid var(--line)}
+.ff-spine .h::after{content:"";position:absolute;right:-6px;top:-5.5px;border:5px solid transparent;border-left:7px solid var(--line);border-right:0}
+.ff-spine .in{left:0;width:22px;top:50%;border-top:1.5px solid var(--line)}
+.ff-row{grid-column:3;display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4) 0;flex-wrap:nowrap}
+.ff-node{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:112px;height:44px;padding:0 var(--space-4);border-radius:var(--radius-pill);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.ff-blue{background:var(--wayatl-blue-primary)}.ff-green{background:var(--wayatl-green-primary)}.ff-red{background:var(--wayatl-red-primary)}
+.ff-arrow{flex:none;position:relative;width:28px;border-top:1.5px solid var(--line)}
+.ff-arrow::after{content:"";position:absolute;right:-1px;top:-5.5px;border:5px solid transparent;border-left:7px solid var(--line);border-right:0}
+.ff-chip{display:inline-flex;align-items:center;min-height:36px;padding:0 var(--space-4);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-pill);background:var(--bg);font-size:14px;line-height:1.3;color:var(--text-primary);white-space:nowrap}
+.ff-arrow:has(+ .ff-leaves)::after{display:none}
+.ff-arrow + .ff-leaves{margin-left:calc(-1 * var(--space-3))}
+.ff-leaves{list-style:none;margin:0;padding:0 0 0 var(--space-5);display:flex;flex-direction:column;gap:var(--space-2);position:relative}
+.ff-leaves::before{content:"";position:absolute;left:0;top:18px;bottom:18px;border-left:1.5px solid var(--line)}
+.ff-leaves li{position:relative}
+.ff-leaves li::before{content:"";position:absolute;left:calc(-1 * var(--space-5));width:calc(var(--space-5) - 4px);top:50%;border-top:1.5px solid var(--line)}
+/* Testing: qualitative insight */
+.qi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-4)}
+.qi-card{min-width:0;display:flex;flex-direction:column;gap:var(--space-4);padding:var(--space-6);background:var(--surface);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.qi-top{display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-3);padding-bottom:var(--space-4);border-bottom:var(--border-width) solid var(--border-subtle)}
+.qi-num{font-family:var(--font-display);font-weight:800;font-size:32px;line-height:1.05;color:var(--text-strong)}
+.qi-freq{font-size:13px;color:var(--text-muted);text-align:right}
+.qi-freq b{font-weight:600;color:var(--text-strong)}
+.qi-h{margin:0;font-family:var(--font-sub);font-weight:600;font-size:24px;line-height:1.2;color:var(--text-strong);max-width:var(--measure-subhead)}
+.qi-p{margin:0;font-size:15px;line-height:1.6;color:var(--text-secondary)}
+.qi-q{margin:0;padding-left:var(--space-4);border-left:2px solid var(--border-strong);font-size:17px;line-height:1.5;font-style:italic;font-weight:300;color:var(--text-primary)}
+.qi-q cite{display:block;margin-top:var(--space-2);font-style:normal;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.qi-act{margin:auto 0 0;padding-top:var(--space-4);border-top:var(--border-width) dashed var(--border-subtle);font-size:14px;line-height:1.5;color:var(--text-primary)}
+.qi-act span{display:block;margin-bottom:var(--space-1);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft)}
+/* Solution: prototype walkthrough */
+.pw-list{display:flex;flex-direction:column;gap:var(--space-9)}
+.pw-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-8);align-items:start}
+.pw-row .pw-text{order:2}
+.pw-text{display:flex;flex-direction:column;gap:var(--space-3);padding-top:var(--space-6)}
+.pw-num{font-family:var(--font-display);font-weight:800;font-size:32px;line-height:1.05;color:var(--text-muted)}
+.pw-h{margin:0;font-family:var(--font-sub);font-weight:600;font-size:28px;line-height:1.15;color:var(--text-strong);max-width:var(--measure-subhead)}
+.pw-p{margin:0;font-size:16px;line-height:1.6;color:var(--text-secondary);max-width:44ch}
+.pw-media{display:flex;justify-content:center}
+.pw-ph{width:min(100%,300px);aspect-ratio:9 / 19.5;border-radius:28px}
+.pw-vid{display:block;width:min(100%,320px);aspect-ratio:720 / 1456;height:auto;mix-blend-mode:lighten}
+@media (max-width:720px){.pw-row{grid-template-columns:1fr;gap:var(--space-5)}.pw-row .pw-text{order:0}.pw-text{padding-top:0}.pw-list{gap:var(--space-8)}}
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){
+.pw-row .pw-text,.pw-row .pw-media{animation:pw-in linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
+@keyframes pw-in{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+}}
+/* Ideation: QR / NFC activation */
+.nf{list-style:none;margin:0;padding:var(--space-6);display:flex;align-items:stretch;gap:var(--space-3);background:var(--surface);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.nf-step{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-4);background:var(--bg);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.nf-n{font-size:12px;letter-spacing:.08em;color:var(--text-muted)}
+.nf-t{font-size:16px;line-height:1.4;color:var(--text-strong);font-weight:500}
+.nf-arrow{flex:none;display:flex;align-items:center}
+.nf-fig{margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
+.nf-fig img{display:block;width:100%;height:auto;aspect-ratio:3 / 2;object-fit:cover;border-radius:var(--radius-md);background:#111}
+@media (max-width:900px){.nf{flex-direction:column}.nf-arrow{justify-content:center}.nf-arrow svg{transform:rotate(90deg)}}
+/* Solution: multilingual mockup */
+.ml-fig{margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
+.ml-fig img{display:block;width:100%;height:auto;aspect-ratio:2400 / 1953;border-radius:var(--radius-md);border:var(--border-width) solid var(--border-subtle);background:var(--surface)}
+/* Reflection: big statement (matches About origin story) */
+.refl-big{margin:0;font-family:var(--font-sub);font-weight:600;font-size:40px;line-height:1.12;color:var(--text-strong);max-width:18ch;text-wrap:pretty}
+@media (max-width:767px){.refl-big{font-size:28px}}
+@container (min-width:960px){
+.ff{grid-template-columns:auto 96px max-content}
+.ff-spine .v,.ff-spine .h{left:40px}.ff-spine .in{width:40px}
+.ff-home{padding:var(--space-6) var(--space-7)}.ff-home-t{font-size:32px}.ff-home-s{font-size:13px}
+.ff-row{gap:var(--space-4);padding:var(--space-5) 0}
+.ff-node{min-width:156px;height:56px;font-size:15px}
+.ff-arrow{width:48px}
+.ff-chip{min-height:44px;padding:0 var(--space-5);font-size:16px}
+.ff-leaves{gap:var(--space-3);padding-left:var(--space-6)}
+.ff-leaves li::before{left:calc(-1 * var(--space-6));width:calc(var(--space-6) - 4px)}
+.ff-leaves::before{top:22px;bottom:22px}
+.ff-arrow + .ff-leaves{margin-left:calc(-1 * var(--space-4))}
+}
+.meta-link{color:var(--text-strong);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.meta-link:hover{text-decoration-thickness:2px}
+.meta-link:focus-visible{outline:var(--focus-width) solid var(--focus-ring);outline-offset:2px;border-radius:2px}
+/* User personas (Research) */
+.pr-wrap{display:flex;flex-direction:column;gap:var(--space-6);padding-top:var(--space-6)}
+.pr-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-7) var(--space-5)}
+.pr{display:flex;flex-direction:column;gap:var(--space-4);min-width:0}
+.pr-img{width:100%;aspect-ratio:4 / 5}
+.pr-name{margin:0;font-family:var(--font-sub);font-weight:600;font-size:24px;line-height:1.2;color:var(--text-strong)}
+.pr-dl{margin:0;display:flex;flex-direction:column;gap:var(--space-2)}
+.pr-dl dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft)}
+.pr-dl dd{margin:0 0 var(--space-3);font-size:14px;line-height:1.55;color:var(--text-secondary)}
+.pr-dl dd:last-child{margin-bottom:0}
+@media (max-width:1100px){.pr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pr-grid{grid-template-columns:minmax(0,1fr)}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){.pr{animation:ak-rise linear both;animation-timeline:view();animation-range:cover 0% cover 100%}}}
+/* User journey map (Research) */
+.jm{margin:0;display:flex;flex-direction:column;gap:var(--space-6);padding:var(--space-6);background:var(--surface);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.jm-cap{display:flex;flex-direction:column;gap:var(--space-2)}
+.jm-eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft)}
+.jm-title{margin:0;font-family:var(--font-sub);font-weight:600;font-size:28px;line-height:1.15;color:var(--text-strong)}
+.jm-sub{margin:0;font-size:16px;line-height:1.6;color:var(--text-secondary);max-width:62ch;text-wrap:pretty}
+.jm-scroll{overflow-x:auto;padding-bottom:var(--space-2)}
+.jm-grid{position:relative;display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));column-gap:var(--space-5);row-gap:var(--space-4);min-width:820px}
+.jm-head{display:flex;flex-direction:column;gap:var(--space-2);padding-top:var(--space-3);border-top:3px solid var(--jc)}
+.jm-n{font-family:var(--font-display);font-weight:800;font-size:28px;line-height:1;color:var(--jc)}
+.jm-t{margin:0;font-family:var(--font-sub);font-weight:600;font-size:20px;line-height:1.2;color:var(--text-strong)}
+.jm-d{margin:0;font-size:14px;line-height:1.55;color:var(--text-secondary)}
+.jm-curve{grid-column:1 / -1;position:relative;height:96px}
+.jm-curve svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.jm-dot{position:absolute;left:var(--x);top:var(--y);width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--jc);box-shadow:0 0 0 4px var(--surface)}
+.jm-feel{justify-self:center;text-align:center}
+.jm-feel .ak-tag{white-space:normal;height:auto;min-height:24px;padding:4px var(--space-2);line-height:1.3}
+.jm-m{display:flex;flex-direction:column;gap:var(--space-2);padding-top:var(--space-3);border-top:var(--border-width) solid var(--border-subtle)}
+.jm-mk{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.jm-m p{margin:0;font-size:14px;line-height:1.55;color:var(--text-primary)}
+.jm-blue{--jc:var(--wayatl-blue-secondary)}.jm-green{--jc:var(--wayatl-green-secondary)}.jm-red{--jc:var(--wayatl-red-secondary)}.jm-yellow{--jc:#E3B448}.jm-white{--jc:var(--text-strong)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-3)}
+@media (max-width:560px){.stats{grid-template-columns:1fr}}
+.stat{min-width:0;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-5);background:var(--surface);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.stat-n{font-family:var(--font-display);font-weight:800;font-size:32px;line-height:1.05;color:var(--text-strong)}
+.stat-l{font-size:14px;line-height:1.5;color:var(--text-secondary)}
+.chart{margin:0;display:flex;flex-direction:column;gap:var(--space-5);padding:var(--space-6);background:var(--surface);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-md)}
+.bar-row{display:flex;align-items:center;gap:var(--space-3)}
+.bar-track{flex:1;height:12px;background:var(--surface-raised);border-radius:var(--radius-pill);overflow:hidden}
+.bar-v{width:56px;text-align:right;font-size:12px;letter-spacing:.08em;color:var(--text-muted)}
+.key{display:inline-flex;align-items:center;gap:var(--space-2);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.sw{width:12px;height:12px;border-radius:2px}
+.cap{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.next{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--space-4);padding:var(--space-6) 0;border-top:var(--border-width) solid var(--border-subtle);border-bottom:var(--border-width) solid var(--border-subtle);text-decoration:none;color:var(--text-strong)}
+.next:hover{color:var(--accent)}
+.next:focus-visible{outline:var(--focus-width) solid var(--focus-ring);outline-offset:var(--focus-width)}
+.side{flex:1 1 100%;min-width:0;box-sizing:border-box;border-bottom:var(--border-width) solid var(--border-subtle)}
+.main{flex:1 1 0;min-width:0}
+@media (min-width:1024px){.side{flex:0 0 var(--sidebar-width);position:sticky;top:0;align-self:flex-start;border-bottom:0}.main{border-left:var(--border-width) solid var(--border-subtle)}}
+@media (min-width:1280px){.side{flex-basis:var(--sidebar-width-wide)}}
+</style>
+<style>
+body{margin:0}
+@keyframes ak-nav-drop{from{clip-path:inset(0 0 100% 0);transform:translateY(-6px)}to{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes ak-nav-item{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+.sub-anim{animation:ak-nav-drop 420ms cubic-bezier(0,0,0.2,1) both}
+.sub-anim>li{animation:ak-nav-item 320ms cubic-bezier(0,0,0.2,1) both}
+.sub-anim>li:nth-child(1){animation-delay:80ms}
+.sub-anim>li:nth-child(2){animation-delay:120ms}
+.sub-anim>li:nth-child(3){animation-delay:160ms}
+.sub-anim>li:nth-child(4){animation-delay:200ms}
+.sub-anim>li:nth-child(5){animation-delay:240ms}
+.sub-anim>li:nth-child(6){animation-delay:280ms}
+}
+</style>
+<style>
+body{margin:0}
+</style>
+</head>
+<body style="margin:0">
+
+
+<div data-theme="wayatl" style="display: flex; flex-wrap: wrap; align-items: stretch; background: var(--bg); color: var(--text-primary); font-family: var(--font-body); min-height: 100vh">
+<div class="side">
+
+
+<header style="box-sizing: border-box; width: 100%; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-6); background: var(--bg); color: var(--text-primary); font-family: var(--font-body)">
+<a href="/" aria-label="Archana Kannan, home" style="display: flex; flex-direction: column; gap: var(--space-1); margin: -12px 0 0 -12px; text-decoration: none; color: var(--text-strong); align-self: flex-start">
+<img src="/assets/2f3749e4e9e6d088b02340126ade3fc6.png" alt="" width="48" height="41" style="display: block; width: 48px; height: auto; margin: 12px">
+<span style="font-family: var(--font-display); font-weight: 800; font-size: 32px; line-height: .95; padding-left: 12px">Archana<br>Kannan</span>
+</a>
+<div style="display: flex; flex-direction: column; gap: var(--space-2)">
+<p style="margin: 0; font-family: var(--font-sub); font-weight: 600; font-size: 24px; line-height: 1.1; color: var(--text-primary)">UI/UX Designer</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--text-muted)">Where logic and instinct have to agree.</p>
+</div>
+<nav aria-label="Main" style="margin-left: calc(var(--space-4) * -1)">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1)">
+<li><a href="/" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: transparent; color: var(--text-muted); border: 1px solid transparent">Home</a></li>
+<li><a href="/portfolio" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: var(--surface-raised); color: var(--text-strong); border: 1px solid var(--border-strong)">Portfolio</a>
+
+<ul class="" aria-label="Case studies" style="list-style: none; margin: var(--space-2) 0 var(--space-2) var(--space-5); padding: 0; display: flex; flex-direction: column; border-left: var(--border-width) solid var(--border-subtle)">
+<li><a href="/wayatl" aria-current="page" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-strong); border-left-color: var(--text-strong)">WayATL</a></li>
+<li><a href="/laya" aria-current="false" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted)">LAYA</a></li>
+<li><span aria-disabled="true" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted); cursor: default">SCAD Accommodate<span class="soon-tag">Soon</span></span></li>
+<li><span aria-disabled="true" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted); cursor: default">MURK<span class="soon-tag">Soon</span></span></li>
+<li><span aria-disabled="true" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted); cursor: default">Infographic Design<span class="soon-tag">Soon</span></span></li>
+<li><a href="/jinx" aria-current="false" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted)">Jinx</a></li>
+</ul>
+
+</li>
+<li><a href="/about" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: transparent; color: var(--text-muted); border: 1px solid transparent">About</a></li>
+<li><a href="/resume/Archana-Kannan-Resume.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--text-muted); border: 1px solid transparent">Resume <svg class="ak-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">(opens PDF in a new tab)</span></a></li>
+</ul>
+</nav>
+<div style="display: flex; flex-direction: column; align-items: flex-start; padding-top: var(--space-6); border-top: var(--border-width) solid var(--border-subtle)">
+<a href="mailto:uxdesign@archanakannan.org" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Get in touch</span><svg class="ak-icon ak-btn__icon-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+</header>
+
+</div>
+<main class="main" style="display: flex; flex-direction: column">
+
+<section class="pad" aria-label="Overview" style="padding-top: var(--space-6); display: flex; flex-direction: column; gap: var(--space-7)">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-6)">
+<a class="ak-back" href="/portfolio"><svg class="ak-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>All work</a>
+<div style="display: flex; flex-wrap: wrap; gap: var(--space-2)"><span class="ak-tag ak-tag--neutral">UI/UX</span><span class="ak-tag ak-tag--neutral">FIFA</span><span class="ak-tag ak-tag--neutral">Wayfinding</span></div>
+<div class="ak-heading ak-heading--lg"><h1 class="ak-heading__title">WayATL</h1><p class="ak-heading__sub">Wayfinding for the 2026 FIFA World Cup</p></div>
+</div>
+<div class="cols" style="align-items: start">
+<p class="lede">WayATL is a location-aware progressive web app built to help FIFA World Cup fans navigate the city during one of the largest events Atlanta has ever hosted. As Lead UX Designer, I led research and design for a wayfinding experience built for a multilingual, high-volume crowd operating under real safety and operational constraints.</p>
+<dl class="ak-meta"><dt>Role</dt><dd>Lead UX Designer</dd><dt>Context</dt><dd>FIFA X Metro Atlanta Chamber X <a class="meta-link" href="https://www.scad.edu/about/industry-partnerships/scadpro" target="_blank" rel="noopener noreferrer">SCADpro</a> collaboration project</dd><dt>Team</dt><dd>2</dd><dt>Duration</dt><dd>10 weeks · 2026</dd><dt>Toolkit</dt><dd>Figma, Adobe Suite, AI-assisted development</dd></dl>
+</div>
+<div class="ph has-img" style="width: 100%; aspect-ratio: 16 / 9; background: var(--bg)"><img src="/assets/4b1ac2cd756e0bac592d1e665d246e8d.webp" alt="Over-the-shoulder view of a person holding a phone open to the WayATL Welcome to Atlanta screen"></div>
+<nav aria-label="In this case study" style="display: flex; flex-wrap: wrap; gap: var(--space-2)">
+<a href="#problem" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Problem</span></a>
+<a href="#opportunity" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Opportunity</span></a>
+<a href="#research" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Research</span></a>
+<a href="#ideation" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Ideation</span></a>
+<a href="#prototyping" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Prototyping</span></a>
+<a href="#testing" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Testing</span></a>
+<a href="#solution" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Solution</span></a>
+<a href="#reflection" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Reflection</span></a>
+</nav>
+</section>
+
+<section id="problem" class="pad sec" aria-label="Problem">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">01 — Problem</p><h2 class="ak-heading__title">Before the first sign</h2></div>
+<section class="ak-case"><h3 class="ak-case__label">Context</h3><div class="ak-case__body">
+<p>For the 2026 FIFA World Cup, hundreds of thousands of international and out-of-state fans will arrive in Atlanta, most of them finding their way through an unfamiliar city in an unfamiliar language. Without clear, accessible wayfinding, the fan experience starts to break down before match day even begins.</p>
+<p>A partner team designed the city’s physical signage: static, in English, and useful once a fan is close enough to read it. Our challenge was the gap before that point: reaching fans sooner, wherever they start, long before they ever see a sign.</p>
+</div></section>
+<div class="slants" role="list" aria-label="Atlanta World Cup by the numbers">
+<div class="slant slant--blue" role="listitem"><span class="slant-n">8</span><p class="slant-l">World Cup matches hosted in Atlanta</p></div>
+<div class="slant slant--green" role="listitem"><span class="slant-n">300K+</span><p class="slant-l">unique spectators expected at matches</p></div>
+<div class="slant slant--red" role="listitem"><span class="slant-n">75%</span><p class="slant-l">of fans travelling from outside Georgia</p></div>
+</div>
+<div class="cols">
+<section class="ak-case"><h3 class="ak-case__label">Problem statement</h3><div class="ak-case__body">
+<p class="lede" style="color: var(--text-strong); max-width: none">Fans arriving in Atlanta for the World Cup are navigating a city most have never visited, often in a language other than English, with no single, reliable source for transit, nearby essentials or emergency information. Static signage and generic map apps weren’t built to close that gap at the moment a fan needs it most: standing on an unfamiliar corner, unsure where to go next.</p>
+</div></section>
+<section class="ak-case"><h3 class="ak-case__label">How might we</h3><div class="ak-case__body">
+<p class="hmw">…give a multilingual crowd of first-time visitors instant access to exactly what they need, right where they’re standing, with no app download, no login and no prior knowledge of the city?</p>
+</div></section>
+</div>
+</section>
+
+<section id="opportunity" class="pad sec" aria-label="Opportunity">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">02 — Opportunity</p><h2 class="ak-heading__title">The answer came first</h2></div>
+<p class="opp-lede"><span>We didn’t start from a blank page.</span> <span>The solution was decided</span> <span>before research began.</span></p>
+<p class="opp-body">WayATL grew out of SCADpro’s founding pitch: the proposal that brought the school and the Metro Atlanta Chamber on board was built around one specific concept. By the time our team joined, the format wasn’t something to discover. It was the premise the client had already signed on to.</p>
+<ul class="brief" aria-label="The brief we inherited">
+<li><span class="brief-k">Given 01</span><p class="brief-t">Mobile web, not an app</p><p class="brief-d">Opens in the browser. No download, no account, no login.</p></li>
+<li><span class="brief-k">Given 02</span><p class="brief-t">Launched from the street</p><p class="brief-d">A QR code or NFC tap on the totems and signage already going up across the city.</p></li>
+<li><span class="brief-k">Given 03</span><p class="brief-t">Aware of where you stand</p><p class="brief-d">Each touchpoint knows its location and serves what a fan needs from that exact spot.</p></li>
+</ul>
+<div class="flows" role="group" aria-label="How this project differed from a typical UX process">
+<div class="flow"><span class="flow-k">Typical process</span><ol><li><span class="step">Research</span></li><li><span class="step">Define</span></li><li><span class="step">Ideate</span></li><li><span class="step step--late">Choose a solution</span></li><li><span class="step">Build</span></li></ol></div>
+<div class="flow"><span class="flow-k">WayATL</span><ol><li><span class="step step--set">Solution given</span></li><li><span class="step">Research</span></li><li><span class="step">Ideate within it</span></li><li><span class="step">Validate</span></li><li><span class="step">Build</span></li></ol></div>
+</div>
+<div class="swap">
+<div><span class="swap-k">So research stopped asking</span><p class="swap-q swap-q--old">What should we build?</p></div>
+<div><span class="swap-k">And started asking</span><p class="swap-q swap-q--new">How do we build this well, and is it right for the people who’ll use it?</p></div>
+</div>
+</section>
+
+<section id="research" class="pad sec" aria-label="Research">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">03 — Research</p><h2 class="ak-heading__title">Listening before mapping</h2></div>
+<div class="rs-split">
+<div class="rs-stack">
+<section class="ak-case"><h3 class="ak-case__label">Secondary research areas</h3><div class="ak-case__body">
+<ul style="margin: 0; padding-left: 20px"><li>User research and synthesis</li><li>User journey and persona development</li><li>Event facts and statistics</li><li>Digital accessibility and ethical urban design</li><li>Back-end data intelligence gathering</li><li>Wayfinding and mega-event case studies</li><li>Technology feasibility and implementation at scale</li></ul>
+</div></section>
+<section class="ak-case"><h3 class="ak-case__label">Insight 01</h3><div class="ak-case__body"><h4 class="ins-h">People get lost at handoff points, not on long walks</h4><p>Fans lose their way at moments of transition: arriving at the airport, transferring on MARTA, walking to the stadium and pushing through the exit crush. Wayfinding should be concentrated where one mode of travel ends and the next begins.</p></div></section>
+<section class="ak-case"><h3 class="ak-case__label">Insight 02</h3><div class="ak-case__body"><h4 class="ins-h">Trust comes before translation</h4><p>Fans arrive with different cultural needs, and for some, privacy is the only reason they’ll use the system at all. Staying anonymous, with no login, is a baseline requirement, not an extra.</p></div></section>
+<section class="ak-case"><h3 class="ak-case__label">Insight 03</h3><div class="ak-case__body"><h4 class="ins-h">Data has to benefit the neighborhoods too</h4><p>Every scan adds to a picture of how people move through the city. That intelligence should support Atlanta’s historically overlooked neighborhoods, not just its commercial districts.</p></div></section>
+</div>
+<div class="ph has-img" style="width: 100%; aspect-ratio: 1 / 1; border: var(--border-width) solid var(--border-subtle); background: #fff"><img src="/assets/d058c7557a18de0cfeb1773e1209dac2.webp" alt="WayATL affinity map: research notes, sources and findings clustered into themes" style="object-fit: contain" loading="lazy"></div>
+</div>
+<figure class="jm" aria-labelledby="jm-title">
+<figcaption class="jm-cap"><span class="jm-eyebrow">User journey</span><h3 id="jm-title" class="jm-title">One fan, eight matches, the same loop</h3><p class="jm-sub">Fans don’t pass through Atlanta once. They repeat this journey across an eight-match event, and each stage asks something different of WayATL.</p></figcaption>
+<div class="jm-scroll"><div class="jm-grid">
+<div class="jm-head jm-blue"><span class="jm-n">01</span><h4 class="jm-t">First orientation</h4></div>
+<div class="jm-head jm-green"><span class="jm-n">02</span><h4 class="jm-t">Everyday navigation</h4></div>
+<div class="jm-head jm-red"><span class="jm-n">03</span><h4 class="jm-t">The safety moment</h4></div>
+<div class="jm-head jm-yellow"><span class="jm-n">04</span><h4 class="jm-t">Match-day density</h4></div>
+<div class="jm-head jm-white"><span class="jm-n">05</span><h4 class="jm-t">Departure</h4></div>
+<p class="jm-d">Lands at Hartsfield-Jackson and asks “where do I go?” before even leaving the airport.</p>
+<p class="jm-d">Loops hotel → Fan Fest → food → stadium, day after day, for the length of the tournament.</p>
+<p class="jm-d">In a crowd of 71,000+, needs help fast: lost, unsafe or wary of drawing attention.</p>
+<p class="jm-d">The stadium hits capacity, and half-time and full-time send sharp surges into the streets.</p>
+<p class="jm-d">Tired, maybe separated from their group, racing the crowd to transit or a flight.</p>
+<div class="jm-curve"><svg viewBox="0 0 1000 120" preserveAspectRatio="none" role="img" aria-label="Fan confidence across the journey: low on arrival, rising during everyday navigation, dropping sharply at the safety moment, recovering on match day, dipping again at departure"><path d="M100 90 C 200 90, 200 50, 300 50 S 400 100, 500 100 S 600 60, 700 60 S 800 80, 900 80" fill="none" stroke="var(--border-strong)" stroke-width="2" vector-effect="non-scaling-stroke" stroke-dasharray="4 6"></path></svg><div aria-hidden="true"><span class="jm-dot jm-blue" style="--x:10%;--y:75%"></span><span class="jm-dot jm-green" style="--x:30%;--y:42%"></span><span class="jm-dot jm-red" style="--x:50%;--y:83%"></span><span class="jm-dot jm-yellow" style="--x:70%;--y:50%"></span><span class="jm-dot jm-white" style="--x:90%;--y:67%"></span></div></div>
+<span class="jm-feel"><span class="ak-tag ak-tag--neutral">Disoriented</span></span>
+<span class="jm-feel"><span class="ak-tag ak-tag--neutral">Building confidence</span></span>
+<span class="jm-feel"><span class="ak-tag ak-tag--neutral">Alert, vulnerable</span></span>
+<span class="jm-feel"><span class="ak-tag ak-tag--neutral">Focused on logistics</span></span>
+<span class="jm-feel"><span class="ak-tag ak-tag--neutral">Urgent, fatigued</span></span>
+<div class="jm-m"><span class="jm-mk">WayATL moment</span><p>The first scan reads the phone’s language, pins “You are here” to their hotel and hands off gate-to-gate MARTA directions.</p></div>
+<div class="jm-m"><span class="jm-mk">WayATL moment</span><p>Walking times measured from that exact totem, not a generic GPS estimate.</p></div>
+<div class="jm-m"><span class="jm-mk">WayATL moment</span><p>SOS and evacuation maps from the same tap. No login, no extra app to remember.</p></div>
+<div class="jm-m"><span class="jm-mk">WayATL moment</span><p>Live drop-off and re-entry data points to the least congested MARTA access.</p></div>
+<div class="jm-m"><span class="jm-mk">WayATL moment</span><p>The same live data, flipped to get fans out and onto transit fast.</p></div>
+</div></div>
+</figure>
+<div class="pr-wrap" aria-labelledby="pr-title">
+<div class="jm-cap"><span class="jm-eyebrow">User personas</span><h3 id="pr-title" class="jm-title">Four fans, four reasons to need WayATL</h3></div>
+<div class="pr-grid">
+<article class="pr">
+<div class="ph has-img pr-img"><img src="/assets/a1efba410db961f8f3eb1537631fee79.webp" alt="A smiling fan in an Argentina jersey and face paint checks her phone beneath a FIFA World Cup 2026 banner" style="object-position: 45% 50%" loading="lazy"></div>
+<h4 class="pr-name">The First-Time International</h4>
+<dl class="pr-dl"><dt>Motivations</dt><dd>Experience Southern hospitality, follow their team and find the best local food.</dd><dt>Pain points</dt><dd>Language barriers, fear of getting lost in a city that isn’t built for walking, and unpredictable MARTA schedules.</dd></dl>
+</article>
+<article class="pr">
+<div class="ph has-img pr-img"><img src="/assets/f036363d106f246c376a8750f4fa820c.webp" alt="A young man in a black hoodie looks up from his phone at a MARTA station entrance" style="object-position: 50% 50%" loading="lazy"></div>
+<h4 class="pr-name">The High-Stakes Pilgrim</h4>
+<dl class="pr-dl"><dt>Motivations</dt><dd>Express deep national pride, take part in group rituals and find social spaces.</dd><dt>Pain points</dt><dd>High sensitivity to extreme heat, a need to move as a coordinated group, and legal or cultural constraints.</dd></dl>
+</article>
+<article class="pr">
+<div class="ph has-img pr-img"><img src="/assets/3312e76304e54870c52b2d852249de56.webp" alt="A woman with curly hair reads her phone in a crowd at dusk, the Atlanta skyline and a Ferris wheel behind her" style="object-position: 45% 50%" loading="lazy"></div>
+<h4 class="pr-name">The At-Risk Local Diaspora</h4>
+<dl class="pr-dl"><dt>Motivations</dt><dd>Witness a historic sporting moment while staying safe in a complex political climate.</dd><dt>Pain points</dt><dd>Fear of immigration enforcement, anxiety about surveillance, and the cost of the “experience economy.”</dd></dl>
+</article>
+<article class="pr">
+<div class="ph has-img pr-img"><img src="/assets/1a7f1a4ceaa4ca25a84aff5fbcc24f44.webp" alt="An older man in glasses holds his phone outside a stadium at dusk" style="object-position: 50% 50%" loading="lazy"></div>
+<h4 class="pr-name">The Domestic “Main Eventer”</h4>
+<dl class="pr-dl"><dt>Motivations</dt><dd>Travel from neighboring states, like 75% of fans, to be part of a global spectacle.</dd><dt>Pain points</dt><dd>High accommodation costs, airport delays, and frustration with broken amenities like chargers and gates.</dd></dl>
+</article>
+</div>
+</div>
+</section>
+
+<section id="ideation" class="pad sec" aria-label="Ideation">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">04 — Ideation</p><h2 class="ak-heading__title">From sketches to a flow</h2></div>
+<section class="ak-case"><h3 class="ak-case__label">Process</h3><div class="ak-case__body">
+<p>With the format already set, ideation focused on how WayATL should look, feel and behave, so we used AI-assisted development to explore that space quickly. Working across several AI generators, we produced a wide range of wireframe iterations, each testing a different take on layout, navigation and how a fan would actually move through the experience.</p>
+<p>Generating many directions in parallel let us compare options side by side and spot what worked across versions. From there, we narrowed the strongest ideas into a single direction to carry into prototyping. AI widened the field; design judgment decided what stayed.</p>
+</div></section>
+<div class="wgal" role="group" aria-label="AI-generated wireframe iterations">
+<div class="wcol">
+<div class="wimg has-img"><img src="/assets/0218b73df5e014e8bf887496413a8fee.webp" alt="AI-generated WayATL wireframe iteration 01" loading="lazy"></div>
+<div class="wimg has-img"><img src="/assets/af4a753bbb669c9bd59c396851b37a5c.webp" alt="AI-generated WayATL wireframe iteration 02" loading="lazy"></div>
+<div class="wimg has-img"><img src="/assets/1f3a53074ace47dbe76dea12630aebca.webp" alt="AI-generated WayATL wireframe iteration 03" loading="lazy"></div>
+</div>
+<div class="wcol wcol-alt">
+<div class="wimg has-img"><img src="/assets/137e0172ad6c61df2146516a5ed40060.webp" alt="AI-generated WayATL wireframe iteration 04" loading="lazy"></div>
+<div class="wimg has-img"><img src="/assets/23b63823909b7b9a8886bf1894494805.webp" alt="AI-generated WayATL wireframe iteration 05" loading="lazy"></div>
+<div class="wimg has-img"><img src="/assets/8407a736cd83a306fcd21a48e949b10b.webp" alt="AI-generated WayATL wireframe iteration 06" loading="lazy"></div>
+</div>
+<div class="wcol">
+<div class="wimg has-img"><img src="/assets/491ac1524d654430305f0470949dcfe3.webp" alt="AI-generated WayATL wireframe iteration 07" loading="lazy"></div>
+<div class="wimg has-img"><img src="/assets/5259b3b9f5939120d4c69123987c578d.webp" alt="AI-generated WayATL wireframe iteration 08" loading="lazy"></div>
+<div class="wimg has-img"><img src="/assets/d91f234d9f49f805c364a7700c517a87.webp" alt="AI-generated WayATL wireframe iteration 09" loading="lazy"></div>
+</div>
+</div>
+<div class="ia-wrap" aria-labelledby="ia-title">
+<div class="jm-cap"><span class="jm-eyebrow">Features &amp; structure</span><h3 id="ia-title" class="jm-title">From features to structure</h3><p class="jm-sub">Once the iterations surfaced what fans needed most, we grouped every feature into clear themes, then turned those themes into the information architecture behind WayATL’s navigation.</p></div>
+<div class="ia-grid">
+<figure class="ia-fig"><div class="ph has-img" style="aspect-ratio: 4 / 3; background: #fff; border: var(--border-width) solid var(--border-subtle)"><img src="/assets/e2a12c6d33184cdedfc0ee2fd2104328.webp" alt="Feature affinity map grouping WayATL features into four clusters: Front-end UX, Back-end data collection, Ethics and standards, and Interactivity" style="object-fit: contain" loading="lazy"></div><figcaption class="ia-cap">Feature affinity map</figcaption></figure>
+<figure class="ia-fig"><div class="ph has-img" style="aspect-ratio: 4 / 3; background: #fff; border: var(--border-width) solid var(--border-subtle)"><img src="/assets/e0dc8f77fb66976b43635c21e20bd88a.webp" alt="WayATL information architecture: a tree branching from the entry point into the app's main sections and their screens" style="object-fit: contain" loading="lazy"></div><figcaption class="ia-cap">Information architecture</figcaption></figure>
+</div>
+</div>
+<div class="ia-wrap" aria-labelledby="nf-title">
+<div class="jm-cap"><span class="jm-eyebrow">Activated by QR codes / NFC chips</span><h3 id="nf-title" class="jm-title">Every visit starts with a scan</h3><p class="jm-sub">WayATL is a mobile-first web experience activated by physical towers. To reach it, a fan scans one of these towers, whether it’s FIFA’s official signage or a tabletop sign.</p></div>
+<ol class="nf" aria-label="How a scan opens WayATL"><li class="nf-step"><span class="nf-n">01</span><span class="nf-t">Fan taps an NFC chip or scans a QR code</span></li><li class="nf-arrow" aria-hidden="true"><svg viewBox="0 0 40 24" width="40" height="24"><path d="M0 12h30" style="stroke: var(--wayatl-blue-secondary)" stroke-width="5"></path><path d="M24 2l11 10-11 10" fill="none" style="stroke: var(--wayatl-blue-secondary)" stroke-width="5"></path></svg></li><li class="nf-step"><span class="nf-n">02</span><span class="nf-t">Mobile webpage opens instantly</span></li><li class="nf-arrow" aria-hidden="true"><svg viewBox="0 0 40 24" width="40" height="24"><path d="M0 12h30" style="stroke: var(--wayatl-green-secondary)" stroke-width="5"></path><path d="M24 2l11 10-11 10" fill="none" style="stroke: var(--wayatl-green-secondary)" stroke-width="5"></path></svg></li><li class="nf-step"><span class="nf-n">03</span><span class="nf-t">Page knows which tower was scanned</span></li><li class="nf-arrow" aria-hidden="true"><svg viewBox="0 0 40 24" width="40" height="24"><path d="M0 12h30" style="stroke: var(--wayatl-red-secondary)" stroke-width="5"></path><path d="M24 2l11 10-11 10" fill="none" style="stroke: var(--wayatl-red-secondary)" stroke-width="5"></path></svg></li><li class="nf-step"><span class="nf-n">04</span><span class="nf-t">Fan gets location-specific content</span></li></ol>
+<figure class="nf-fig"><img src="/assets/7c64a6cdfb14f4d7b72d1330af0f3219.webp" alt="WayATL tabletop sign on a restaurant table reading Your match day mapped out, Scan or tap to explore, with a QR code" loading="lazy" decoding="async"><figcaption class="cap">An example of a scannable physical tower that activates WayATL</figcaption></figure>
+</div>
+<div class="ia-wrap" aria-labelledby="ff-title">
+<div class="jm-cap"><span class="jm-eyebrow">Final flow</span><h3 id="ff-title" class="jm-title">One scan, three paths</h3><p class="jm-sub">Every visit starts on the same home screen. From there, a fan is never more than two taps from what they came for: getting somewhere, finding something nearby, or getting help.</p></div>
+<div class="ff-panel"><div class="ff-scroll">
+<div class="ff" role="group" aria-label="WayATL final flow">
+<div class="ff-home"><span class="ff-home-t">WayATL</span><span class="ff-home-s">Home · first scan</span></div>
+<div class="ff-spine ff-first" style="--r:1"><i class="v"></i><i class="h"></i></div>
+<div class="ff-row" style="--r:1"><span class="ff-node ff-blue">Transit</span><i class="ff-arrow"></i><span class="ff-chip">Select destination</span><i class="ff-arrow"></i><span class="ff-chip">Transit options</span></div>
+<div class="ff-spine ff-mid" style="--r:2"><i class="v"></i><i class="h"></i><i class="in"></i></div>
+<div class="ff-row" style="--r:2"><span class="ff-node ff-green">Explore</span><i class="ff-arrow"></i><ul class="ff-leaves"><li><span class="ff-chip">Popular locations</span></li><li><span class="ff-chip">Water</span></li><li><span class="ff-chip">Food</span></li><li><span class="ff-chip">Restrooms</span></li><li><span class="ff-chip">First aid</span></li></ul></div>
+<div class="ff-spine ff-last" style="--r:3"><i class="v"></i><i class="h"></i></div>
+<div class="ff-row" style="--r:3"><span class="ff-node ff-red">SOS</span><i class="ff-arrow"></i><ul class="ff-leaves"><li><span class="ff-chip">Nearest exit</span></li><li><span class="ff-chip">Non-emergency medical help</span></li><li><span class="ff-chip">Emergency contacts</span></li><li><span class="ff-chip">911 speed dial</span></li></ul></div>
+</div>
+</div></div>
+</div>
+</section>
+
+<section id="prototyping" class="pad sec" aria-label="Prototyping">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">05 — Prototyping</p><h2 class="ak-heading__title">The prototype in motion</h2></div>
+<section class="ak-case"><h3 class="ak-case__label">Prototype</h3><div class="ak-case__body">
+<p>A high-fidelity Figma prototype covering three core functions of WayATL: Transit, Explore, and SOS.</p>
+</div></section>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)"><div class="ph has-img" style="width: 100%; aspect-ratio: 1600 / 966; background: #000"><video src="/assets/5c533c1837a6e1fd0f88fa03fe1ad4bd.mp4" poster="/assets/8d7db67a8cc86b9bf289c4d07d2692ba.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="WayATL prototype walkthrough of the Transit, Explore and SOS flows on a phone" style="display: block; width: 100%; height: 100%; object-fit: cover"></video></div><figcaption class="cap">Three core flows: Transit, Explore and SOS</figcaption></figure>
+</section>
+
+<section id="testing" class="pad sec" aria-label="Testing">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">06 — Testing</p><h2 class="ak-heading__title">What testing told us</h2></div>
+<section class="ak-case"><h3 class="ak-case__label">Method</h3><div class="ak-case__body">
+<p>We tested WayATL over multiple rounds using two complementary methods. Heuristic evaluations with experienced UI/UX professionals surfaced usability issues early. Moderated guerrilla testing with fans unfamiliar with Atlanta showed how real visitors navigate under pressure and gave us task-level usability metrics.</p>
+</div></section>
+<div class="stats">
+<div class="stat"><span class="stat-n" style="color: var(--accent)">84%</span><span class="stat-l">task completion rate</span></div>
+<div class="stat"><span class="stat-n">8.5/10</span><span class="stat-l">average ease-of-use rating</span></div>
+<div class="stat"><span class="stat-n">7 secs</span><span class="stat-l">median time to successfully complete task</span></div>
+<div class="stat"><span class="stat-n">12</span><span class="stat-l">participants across 2 rounds</span></div>
+</div>
+<div class="ia-wrap qi" aria-labelledby="qi-title">
+<div class="jm-cap"><span class="jm-eyebrow">Qualitative insight</span><h3 id="qi-title" class="jm-title">What fans told us</h3><p class="jm-sub">Beyond the metrics, two themes came up again and again: WayATL needed to look like the World Cup, and its core actions needed to be impossible to&nbsp;miss.</p></div>
+<div class="qi-grid">
+<article class="qi-card">
+<div class="qi-top"><span class="qi-num">01</span><span class="qi-freq"><b>12</b> of 12 participants</span></div>
+<h4 class="qi-h">The branding didn’t feel like the World Cup</h4>
+<p class="qi-p">We had built the UI on Metro Atlanta Chamber’s brand identity, since the Chamber sits on Atlanta’s FIFA Host Committee. Fans expected the product to look like the event itself.</p>
+<blockquote class="qi-q">“This product is for FIFA, but it doesn’t look like it.”<cite>UX professional</cite></blockquote>
+<p class="qi-act"><span>What we changed</span>We rebuilt the visual identity around FIFA’s World Cup 2026 branding.</p>
+</article>
+<article class="qi-card">
+<div class="qi-top"><span class="qi-num">02</span><span class="qi-freq"><b>7</b> of 12 participants</span></div>
+<h4 class="qi-h">The core flows didn’t stand out</h4>
+<p class="qi-p">The Transit, Explore and SOS buttons were too small and plain to signal that they were the app’s main actions.</p>
+<blockquote class="qi-q">“I can’t tell that these buttons are the most important.”<cite>FIFA fan</cite></blockquote>
+<p class="qi-act"><span>What we changed</span>We enlarged and highlighted the three core buttons so they take up most of the home screen.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section id="solution" class="pad sec" aria-label="Solution">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">07 — Solution</p><h2 class="ak-heading__title">One PWA for match day</h2></div>
+<figure style="margin: 0; width: 100%; aspect-ratio: 2400 / 1342; border-radius: var(--radius-md); overflow: hidden; background: #000"><img src="/assets/40d72ff334396b6bc2e15894e9b0de4f.webp" alt="Hands holding a phone showing the WayATL launch screen, beside the WayATL wordmark and the line: Introducing WayATL, a digital, location-aware companion" loading="lazy" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover"></figure>
+<div class="cols">
+<section class="ak-case"><h3 class="ak-case__label">Finding WayATL before they need it</h3><div class="ak-case__body"><p>QR codes and NFC chips appear on towers, hotel tabletops, restaurant tables, and airport arrivals, reaching people at quieter moments, long before they are standing in a crowd.</p></div></section>
+<section class="ak-case"><h3 class="ak-case__label">Mobile-first PWA</h3><div class="ak-case__body"><p>WayATL is a mobile-first website built to Progressive Web App (PWA) standards: accessible on any smartphone, save-able to a home screen, with native location support. No app store. No friction for international visitors.</p></div></section>
+<section class="ak-case"><h3 class="ak-case__label">Auto-language detection</h3><div class="ak-case__body"><p>WayATL detects the user’s native phone settings from the first tap and customizes the language experience accordingly.</p></div></section>
+</div>
+<div class="ia-wrap pw" aria-labelledby="pw-title">
+<div class="jm-cap"><span class="jm-eyebrow">Prototype walkthrough</span><h3 id="pw-title" class="jm-title">Every screen, start to finish</h3><p class="jm-sub">From the first scan to a call for help, here is each WayATL screen in motion.</p></div>
+<div class="pw-list">
+<div class="pw-row">
+<div class="pw-text"><span class="pw-num">01</span><h4 class="pw-h">Splash screen</h4><p class="pw-p">The entry point, activated the moment a fan taps a tower or scans a QR code. No account required. The experience is live in under a second, in the fan’s native language.</p></div>
+<div class="pw-media"><video class="pw-vid" src="/assets/38a5c1d98f4770a9c4b3894725d17f84.mp4" poster="/assets/c3e0814f25dd1c34c053ce288c9ffd24.webp" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="WayATL splash screen: the WayATL wordmark and the line Your guide to Atlanta x FIFA World Cup 2026"></video></div>
+</div>
+<div class="pw-row">
+<div class="pw-text"><span class="pw-num">02</span><h4 class="pw-h">Homepage</h4><p class="pw-p">Auto-detects the tower’s location and places the fan on the map, with no input required. Three primary actions surface immediately: Transit, Explore and SOS. FIFA 2026 destinations are preloaded and accessible without navigating or searching.</p></div>
+<div class="pw-media"><video class="pw-vid" src="/assets/d2fd4304523a421cc57abe5a2796b8ef.mp4" poster="/assets/db1953fb24f5366a4f84d62ffd68a747.webp" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="WayATL homepage: a map at Peachtree Center Station, Welcome to Atlanta, and Transit, Explore and SOS buttons"></video></div>
+</div>
+<div class="pw-row">
+<div class="pw-text"><span class="pw-num">03</span><h4 class="pw-h">Transit</h4><p class="pw-p">Every transport option, from walking and MARTA to micro-mobility and rideshare, is shown from the fan’s current position. Landmark-based directions give human-readable cues alongside the map. A step-free routing toggle prioritizes accessible pathways for visitors who need them.</p></div>
+<div class="pw-media"><video class="pw-vid" src="/assets/a460d15a4e892657a4d99e6a9b029d78.mp4" poster="/assets/dad49b8426996c7600838668c3e30ba4.webp" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="WayATL Transit and Directions screen with destinations, a step-free routes toggle and transit options"></video></div>
+</div>
+<div class="pw-row">
+<div class="pw-text"><span class="pw-num">04</span><h4 class="pw-h">Explore</h4><p class="pw-p">Shows popular attractions nearby for fans to explore, and surfaces essentials such as food, restrooms, hydration points and first aid based on the fan’s exact location. Each result includes the walking distance and a direct link to navigate in the fan’s native map app.</p></div>
+<div class="pw-media"><video class="pw-vid" src="/assets/b93cef78d2334ce5f5a8d88fbaa579f6.mp4" poster="/assets/0fcbaa1b24c12bf8a3d06834243488f6.webp" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="WayATL Explore Atlanta screen with nearby attractions and essentials such as restaurants and restrooms"></video></div>
+</div>
+<div class="pw-row">
+<div class="pw-text"><span class="pw-num">05</span><h4 class="pw-h">SOS</h4><p class="pw-p">911 and the FIFA 2026 emergency hotline are preloaded and one tap away. The nearest first aid location surfaces automatically based on the tower’s location. When FIFA command declares an emergency, a live evacuation map activates and its paths update in real time.</p></div>
+<div class="pw-media"><video class="pw-vid" src="/assets/8ff94009ced484e733637c6b58d313d1.mp4" poster="/assets/f256b72471a20ca9dbe5f3751107c952.webp" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="WayATL Emergency screen with a call emergency services button, hotlines, nearest first aid and a live evacuation map"></video></div>
+</div>
+</div>
+</div>
+<div class="ia-wrap" aria-labelledby="ml-title">
+<div class="jm-cap"><span class="jm-eyebrow">Multilingual screens</span><h3 id="ml-title" class="jm-title">Speaks the fan’s language</h3><p class="jm-sub">The same homepage, served in each fan’s phone language from the first tap, including a full right-to-left layout for Arabic.</p></div>
+<figure class="ml-fig"><img src="/assets/b47819ee5c0d1df641a0bbeb58bc0b71.webp" alt="Three phones showing the WayATL homepage in French, Arabic and Spanish, with the Arabic screen mirrored right to left" loading="lazy" decoding="async"><figcaption class="cap">WayATL homepage in French, Arabic and Spanish</figcaption></figure>
+</div>
+</section>
+
+<section id="reflection" class="pad sec" aria-label="Reflection">
+<div class="ak-heading ak-heading--sm"><p class="ak-heading__eyebrow">08 — Reflection</p><h2 class="ak-heading__title">What I’d carry forward</h2></div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)"><img src="/assets/67d781376508a60c82fff7f494333353.webp" alt="Presenting WayATL to FIFA stakeholders, with the WayATL launch slide on the screen behind the podium" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 1619 / 1080; object-fit: cover; border-radius: var(--radius-md)"><figcaption class="cap">Presenting WayATL to FIFA stakeholders</figcaption></figure>
+<div class="cols">
+<p class="refl-big">Designing for a crowd taught me to design for a fan’s most stressful moment, not their average one.</p>
+<div class="ak-case__body" style="max-width: var(--measure)">
+<p>Starting from the physical world shaped every decision. Because fans reach WayATL by scanning a tower, there is no download, no account and no language to choose, and the homepage already knows where they are standing. Testing kept us honest: every participant told us the first design didn’t feel like the World Cup, and moving to FIFA’s identity tied the product to the event fans came for.</p>
+<p>With more time, I would test on-site during a live match day, where crowds, noise and weak signal are real rather than simulated, and validate the SOS flow and live evacuation map with the people who would run them.</p>
+<p>Leading a two-person team over ten weeks, with AI-assisted tools speeding us from sketches to wireframes, showed me where my time matters most: less on polish, more on the questions only real users can answer.</p>
+</div>
+</div>
+</section>
+
+<section class="pad sec" aria-label="Next project">
+<a class="next" href="/laya"><span style="display: flex; flex-direction: column; gap: var(--space-3)"><span class="cap">Next case study</span><span style="font-family: var(--font-display); font-weight: 800; font-size: clamp(44px,4.6vw,64px); line-height: .96">LAYA</span></span><svg class="ak-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</section>
+
+
+
+<footer id="connect" aria-label="Let’s connect" style="box-sizing: border-box; width: 100%; margin-top: var(--space-9); padding: var(--space-9) clamp(24px,5vw,80px) var(--space-7); display: flex; flex-direction: column; gap: var(--space-7); background: var(--bg-sunken); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); font-family: var(--font-body)">
+<div class="ak-heading ak-heading--lg"><h2 class="ak-heading__title">Let’s connect</h2></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-7) clamp(40px,5vw,80px); align-items: stretch">
+<div style="min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5)">
+<p style="margin: -6px 0 0; font-size: 20px; font-weight: 300; line-height: 1.5; color: var(--text-secondary); max-width: 40ch">Have an idea, a question or just want to talk design? I’d love to hear from you.</p>
+<a href="mailto:uxdesign@archanakannan.org" target="_blank" rel="noopener noreferrer" aria-label="Email uxdesign@archanakannan.org (opens a new message in your email)" style="align-self: flex-start; display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--control-md); font-family: var(--font-sub); font-weight: 600; font-size: clamp(24px,2.4vw,32px); color: var(--text-strong); text-decoration: none; border-bottom: var(--border-width) solid var(--accent); padding-bottom: var(--space-1)">uxdesign@archanakannan.org <svg class="ak-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+<ul aria-label="Profiles" style="min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-bottom: var(--border-width) solid var(--border-subtle)">
+<li><a href="https://www.linkedin.com/in/archanakannanuxd/" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">LinkedIn <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+<li><a href="https://www.behance.net/archana_kannan" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">Behance <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+<li><a href="https://www.instagram.com/arxhie.ux/" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">Instagram <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+</ul>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); justify-content: space-between; align-items: center; padding-top: var(--space-5); border-top: var(--border-width) solid var(--border-subtle)">
+<p style="margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted)">© 2026 Archana Kannan</p>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 0 var(--space-5)">
+<a href="/" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">Home</a>
+<a href="/portfolio" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">Portfolio</a>
+<a href="/about" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">About</a>
+</nav>
+</div>
+</footer>
+
+</main>
+</div>
+
+</body>
+</html>

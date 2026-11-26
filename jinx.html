@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jinx card deck — Graphic design — Archana Kannan</title>
+<meta name="description" content="Jinx: a hand-drawn playing-card deck and packaging inspired by Arcane. Graphic design project by Archana Kannan.">
+<link rel="canonical" href="https://archanakannan.org/jinx">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Archana Kannan">
+<meta property="og:title" content="Jinx card deck — Graphic design — Archana Kannan">
+<meta property="og:description" content="Jinx: a hand-drawn playing-card deck and packaging inspired by Arcane. Graphic design project by Archana Kannan.">
+<meta property="og:url" content="https://archanakannan.org/jinx">
+<meta property="og:image" content="https://archanakannan.org/assets/b086ae3448a5b18f96a7bc1322249490.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="icon" type="image/png" href="/assets/2f3749e4e9e6d088b02340126ade3fc6.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,600;1,600&amp;family=Syne:wght@800&amp;display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/motion.css">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+body{margin:0}
+.ak-heading h1.ak-heading__title{overflow-wrap:anywhere}
+.ph{background:var(--bg-sunken);border:1px dashed var(--border-strong);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;box-sizing:border-box;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.ph-k{color:var(--text-primary)}
+.card-ph{aspect-ratio:5 / 7;border-radius:var(--radius-lg)}
+.bleed{border-radius:var(--radius-none);border-left:0;border-right:0}
+.pad{padding-left:clamp(24px,4vw,64px);padding-right:clamp(24px,4vw,64px)}
+.sec{padding-top:var(--space-9);display:flex;flex-direction:column;gap:var(--space-6)}
+.lede{margin:0;font-size:20px;font-weight:300;line-height:1.5;color:var(--text-secondary);max-width:46ch}
+.step{display:flex;flex-wrap:wrap;gap:var(--space-6) var(--space-8);align-items:flex-start}
+.step-txt{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:var(--space-4)}
+.step-img{flex:3 1 520px;min-width:0}
+.num{margin:0;font-family:var(--font-display);font-weight:800;font-size:64px;line-height:.9;color:var(--accent-violet)}
+.deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--space-3)}
+.cap{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.next{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--space-4);padding:var(--space-6) 0;border-top:var(--border-width) solid var(--border-subtle);border-bottom:var(--border-width) solid var(--border-subtle);text-decoration:none;color:var(--text-strong)}
+.next:hover{color:var(--accent)}
+.next:focus-visible{outline:var(--focus-width) solid var(--focus-ring);outline-offset:var(--focus-width)}
+.side{flex:1 1 100%;min-width:0;box-sizing:border-box;border-bottom:var(--border-width) solid var(--border-subtle)}
+.main{flex:1 1 0;min-width:0}
+@media (min-width:1024px){.side{flex:0 0 var(--sidebar-width);position:sticky;top:0;align-self:flex-start;border-bottom:0}.main{border-left:var(--border-width) solid var(--border-subtle)}}
+@media (min-width:1280px){.side{flex-basis:var(--sidebar-width-wide)}}
+.dk{container-type:inline-size;display:flex;flex-direction:column;gap:var(--space-8);--fw:min(240px,calc((100cqi - var(--space-8)) / 4.2))}
+.dk-g{display:flex;flex-direction:column;gap:var(--space-3);min-width:0}
+.dk-k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary)}
+.dk-row{display:flex;flex-wrap:wrap;gap:var(--space-8)}
+.dk-cards{display:flex;flex-wrap:wrap;gap:var(--space-3);padding-top:var(--space-3)}
+.dk-card{flex:none;width:var(--fw);aspect-ratio:5 / 7;border-radius:8px;overflow:hidden;background:#000}
+.dk-card img{display:block;width:100%;height:100%;object-fit:cover}
+.dk-fan{display:flex;padding-top:var(--space-3)}
+.dk-fan .dk-card{box-shadow:-6px 0 18px rgba(0,0,0,.5);transition:transform var(--duration-base,200ms) var(--ease-standard,ease)}
+.dk-fan .dk-card+.dk-card{margin-left:calc(var(--fw) * -.6)}
+.dk-fan .dk-card:hover{transform:translateY(-12px)}
+@media (prefers-reduced-motion:reduce){.dk-fan .dk-card{transition:none}.dk-fan .dk-card:hover{transform:none}}
+.pkw{container-type:inline-size}
+.pk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);align-items:end}
+.pk-die{grid-column:1 / -1}
+@container (min-width:720px){.pk{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.81fr)}.pk-die{grid-column:auto}}
+.pk-f{margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
+.pk-f img{display:block;width:100%;height:auto;border-radius:var(--radius-md)}
+.palw{container-type:inline-size}
+.pal{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4) var(--space-3)}
+@container (min-width:480px){.pal{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.pal-c{display:flex;flex-direction:column;gap:var(--space-2);min-width:0}
+.pal-sw{display:block;width:100%;aspect-ratio:1 / 2.4;border-radius:var(--radius-md)}
+.pal-h{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--text-strong)}
+.pal-n{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+</style>
+<style>
+body{margin:0}
+@keyframes ak-nav-drop{from{clip-path:inset(0 0 100% 0);transform:translateY(-6px)}to{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes ak-nav-item{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+.sub-anim{animation:ak-nav-drop 420ms cubic-bezier(0,0,0.2,1) both}
+.sub-anim>li{animation:ak-nav-item 320ms cubic-bezier(0,0,0.2,1) both}
+.sub-anim>li:nth-child(1){animation-delay:80ms}
+.sub-anim>li:nth-child(2){animation-delay:120ms}
+.sub-anim>li:nth-child(3){animation-delay:160ms}
+.sub-anim>li:nth-child(4){animation-delay:200ms}
+.sub-anim>li:nth-child(5){animation-delay:240ms}
+.sub-anim>li:nth-child(6){animation-delay:280ms}
+}
+</style>
+<style>
+body{margin:0}
+</style>
+</head>
+<body style="margin:0">
+
+
+<div data-theme="jinx" style="display: flex; flex-wrap: wrap; align-items: stretch; background: var(--bg); color: var(--text-primary); font-family: var(--font-body); min-height: 100vh">
+<div class="side">
+
+
+<header style="box-sizing: border-box; width: 100%; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-6); background: var(--bg); color: var(--text-primary); font-family: var(--font-body)">
+<a href="/" aria-label="Archana Kannan, home" style="display: flex; flex-direction: column; gap: var(--space-1); margin: -12px 0 0 -12px; text-decoration: none; color: var(--text-strong); align-self: flex-start">
+<img src="/assets/2f3749e4e9e6d088b02340126ade3fc6.png" alt="" width="48" height="41" style="display: block; width: 48px; height: auto; margin: 12px">
+<span style="font-family: var(--font-display); font-weight: 800; font-size: 32px; line-height: .95; padding-left: 12px">Archana<br>Kannan</span>
+</a>
+<div style="display: flex; flex-direction: column; gap: var(--space-2)">
+<p style="margin: 0; font-family: var(--font-sub); font-weight: 600; font-size: 24px; line-height: 1.1; color: var(--text-primary)">UI/UX Designer</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--text-muted)">Where logic and instinct have to agree.</p>
+</div>
+<nav aria-label="Main" style="margin-left: calc(var(--space-4) * -1)">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1)">
+<li><a href="/" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: transparent; color: var(--text-muted); border: 1px solid transparent">Home</a></li>
+<li><a href="/portfolio" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: var(--surface-raised); color: var(--text-strong); border: 1px solid var(--border-strong)">Portfolio</a>
+
+<ul class="" aria-label="Case studies" style="list-style: none; margin: var(--space-2) 0 var(--space-2) var(--space-5); padding: 0; display: flex; flex-direction: column; border-left: var(--border-width) solid var(--border-subtle)">
+<li><a href="/wayatl" aria-current="false" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted)">WayATL</a></li>
+<li><a href="/laya" aria-current="false" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted)">LAYA</a></li>
+<li><span aria-disabled="true" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted); cursor: default">SCAD Accommodate<span class="soon-tag">Soon</span></span></li>
+<li><span aria-disabled="true" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted); cursor: default">MURK<span class="soon-tag">Soon</span></span></li>
+<li><span aria-disabled="true" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-muted); cursor: default">Infographic Design<span class="soon-tag">Soon</span></span></li>
+<li><a href="/jinx" aria-current="page" style="display: flex; align-items: center; min-height: 40px; margin-left: -1px; padding: 0 var(--space-4); border-left: 2px solid transparent; font-size: 14px; line-height: 1.3; text-decoration: none; transition: color var(--duration-fast), border-color var(--duration-fast); color: var(--text-strong); border-left-color: var(--text-strong)">Jinx</a></li>
+</ul>
+
+</li>
+<li><a href="/about" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: transparent; color: var(--text-muted); border: 1px solid transparent">About</a></li>
+<li><a href="/resume/Archana-Kannan-Resume.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--text-muted); border: 1px solid transparent">Resume <svg class="ak-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">(opens PDF in a new tab)</span></a></li>
+</ul>
+</nav>
+<div style="display: flex; flex-direction: column; align-items: flex-start; padding-top: var(--space-6); border-top: var(--border-width) solid var(--border-subtle)">
+<a href="mailto:uxdesign@archanakannan.org" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Get in touch</span><svg class="ak-icon ak-btn__icon-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+</header>
+
+</div>
+<main class="main" style="display: flex; flex-direction: column">
+
+<section class="pad" aria-label="Overview" style="padding-top: var(--space-6); display: flex; flex-direction: column; gap: var(--space-7)">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-6)">
+<a class="ak-back" href="/portfolio"><svg class="ak-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>All work</a>
+<div style="display: flex; flex-wrap: wrap; gap: var(--space-2)"><span class="ak-tag ak-tag--neutral">Graphic design</span><span class="ak-tag ak-tag--neutral">Card deck</span><span class="ak-tag ak-tag--neutral">Illustration</span></div>
+<div class="ak-heading ak-heading--lg"><h1 class="ak-heading__title">Jinx</h1><p class="ak-heading__sub">A card deck from Jinx’s chaotic, graffiti-splashed world</p></div>
+</div>
+<div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6) var(--space-7); align-items: start">
+<p class="lede">A playing-card deck and its packaging, designed around Jinx from <i>Arcane</i> and <i>League of Legends</i>. Spray-paint marks, chaotic graffiti and scrawled symbols capture her unpredictable energy, while a cohesive design language holds every card together as one&nbsp;deck.</p>
+<dl class="ak-meta"><dt>Format</dt><dd>Card deck + packaging</dd><dt>Role</dt><dd>Designer, illustrator</dd><dt>Context</dt><dd>SCAD GRDS 348 ‘Studio I: Production and Technique’ course project</dd><dt>Duration</dt><dd>1.5 weeks · 2025</dd><dt>Toolkit</dt><dd>Adobe Photoshop, Procreate</dd></dl>
+</div>
+<figure style="margin: 0; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-md); overflow: hidden; background: #464543"><img src="/assets/b086ae3448a5b18f96a7bc1322249490.webp" alt="Jinx card deck mockup: two neon graffiti card backs reading Jinx was here, leaning against the tuck box with a pink line portrait and the words Jinx card deck" decoding="async" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%"></figure>
+</section>
+
+<section class="pad sec" aria-label="The process" style="gap: var(--space-8)">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">Uncontrollable chaos</h2></div>
+
+<div class="step">
+<div class="step-txt"><p class="num" aria-hidden="true">01</p><section class="ak-case"><h3 class="ak-case__label">Concept</h3><div class="ak-case__body"><p>I debated three themes before committing: <i>Valorant</i> (through the agent Sage), Cybersigilism and Jinx. I chose Jinx for the room she left to experiment. Her chaotic, expressive world was an invitation to make something unorthodox: a deck that bends the conventions of a playing card instead of following&nbsp;them.</p></div></section></div>
+<div class="step-img"><div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3)">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-2)"><img src="/assets/5c13900c8af38c19f608782a6af77f12.webp" alt="Pencil concept sketch of Sage from Valorant, seated cross-legged and mirrored top to bottom like a face card" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 5 / 7; border-radius: var(--radius-md); background: #fff"><figcaption class="cap">Valorant · Sage</figcaption></figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-2)"><img src="/assets/6bb06888b2d7ae67dbaf8c3a363ad2d0.webp" alt="Pencil concept sketch in the Cybersigilism style: symmetrical, thorn-like linework with spiked wings" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 5 / 7; border-radius: var(--radius-md); background: #fff"><figcaption class="cap">Cybersigilism</figcaption></figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-2)"><img src="/assets/570cc56b842f6429d332066de18b7544.webp" alt="Pencil concept sketch of a 3 of spades with a mirrored portrait of Jinx surrounded by graffiti doodles" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 5 / 7; border-radius: var(--radius-md); background: #fff"><figcaption class="cap" style="color: var(--text-strong)">Jinx · Selected</figcaption></figure>
+</div></div>
+</div>
+
+<div class="step">
+<div class="step-txt"><p class="num" aria-hidden="true">02</p><section class="ak-case"><h3 class="ak-case__label">Research &amp; moodboard</h3><div class="ak-case__body"><p>Research started with the source material. I’ve played <i>League of Legends</i> and watched <i>Arcane</i>, both of which feature Jinx. From there, I gathered visual research on her poses, color schemes and the symbols she’s associated with, from her graffiti tags to the doodles she leaves&nbsp;behind.</p></div></section></div>
+<div class="step-img"><figure style="margin: 0; max-width: 600px; display: flex; flex-direction: column; gap: var(--space-2)"><img src="/assets/b6d3a9740ba5dcaf169927089454c2d5.webp" alt="Jinx moodboard: neon graffiti walls reading Jinx was here and You’re a jinx, her monkey, rabbit and butterfly doodles, and reference images of Jinx with blue braids" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 1463 / 1786; border-radius: var(--radius-md); background: #000"><figcaption class="cap">Moodboard</figcaption></figure></div>
+</div>
+
+<div class="step">
+<div class="step-txt"><p class="num" aria-hidden="true">03</p><section class="ak-case"><h3 class="ak-case__label">Color palette</h3><div class="ak-case__body"><p>I built the palette from the colors most associated with Jinx: electric magenta, cyan and blues, a violet, two acid greens and a muted plum. Together they’re hyper, sharp and bright, a palette that feels chaotic on purpose and glows like neon against the black of the card&nbsp;backs.</p></div></section></div>
+<div class="step-img"><div class="palw"><ul class="pal" aria-label="Jinx color palette"><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-pink-primary)"></span><span class="pal-h">#EB00CE</span><span class="pal-n">Pink</span></li><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-cyan-primary)"></span><span class="pal-h">#06F9FC</span><span class="pal-n">Cyan</span></li><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-blue-sky)"></span><span class="pal-h">#00A2DF</span><span class="pal-n">Sky blue</span></li><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-blue-azure)"></span><span class="pal-h">#008DFF</span><span class="pal-n">Azure</span></li><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-violet)"></span><span class="pal-h">#8119DF</span><span class="pal-n">Violet</span></li><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-green)"></span><span class="pal-h">#6CEA2B</span><span class="pal-n">Acid green</span></li><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-plum)"></span><span class="pal-h">#862A58</span><span class="pal-n">Plum</span></li><li class="pal-c"><span class="pal-sw" style="background: var(--jinx-green-light)"></span><span class="pal-h">#95E76C</span><span class="pal-n">Light green</span></li></ul></div></div>
+</div>
+
+<div class="step">
+<div class="step-txt"><p class="num" aria-hidden="true">04</p><section class="ak-case"><h3 class="ak-case__label">Development</h3><div class="ak-case__body"><p>Every asset in the deck was hand-drawn in Procreate: the pips, the face cards, the jokers, the card back and every scrawled symbol in between. I wanted the deck to be a completely original work of art, with nothing pulled from stock or traced from&nbsp;elsewhere.</p></div></section></div>
+<div class="step-img"><figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-2)"><img src="/assets/184d7204ae0dd1136d14261ab666c798.webp" alt="Procreate canvas showing the Jinx was here card back in progress, with its layers panel listing each hand-drawn doodle on its own layer" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 2732 / 2048; border-radius: var(--radius-md); background: #1c1c1c"><figcaption class="cap">The card back in progress in Procreate</figcaption></figure></div>
+</div>
+</section>
+
+<section class="pad sec" aria-label="Final work">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">The deck</h2></div>
+<div class="dk">
+<div class="dk-g"><span class="dk-k">Number cards · 2–10 of spades</span><div class="dk-fan"><div class="dk-card"><img src="/assets/e4c6a979f0f2646cc1aa69d913386c99.webp" alt="2 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/f74da678cad4404a205c6d175f450719.webp" alt="3 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/4b2b167d95d805a2ee1db066a23069a4.webp" alt="4 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/4150c164851145f36b1b43824a31ff24.webp" alt="5 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/c622aa97b5e84cbb3d26788fb40d8903.webp" alt="6 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/dea2483e65a878f1d503cbc0391314ef.webp" alt="7 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/45d1adf9034fc4cc2638f1652540669b.webp" alt="8 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/f39dafb4292236bc9445623f19a07021.webp" alt="9 of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/fc52bc830156eeaf326df82923a78829.webp" alt="10 of spades" loading="lazy" decoding="async"></div></div></div>
+<div class="dk-row"><div class="dk-g"><span class="dk-k">Aces</span><div class="dk-fan"><div class="dk-card"><img src="/assets/b47991e42b0c1a814e93c6053a3c9464.webp" alt="Ace of spades" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/6dde5696835455466e04315f9fb64baa.webp" alt="Ace of diamonds" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/a7c5f063591ef906d6df447280ba66a4.webp" alt="Ace of clubs" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/9da2b96bec69e7e83ec5179a531594e0.webp" alt="Ace of hearts" loading="lazy" decoding="async"></div></div></div><div class="dk-g"><span class="dk-k">Face cards</span><div class="dk-fan"><div class="dk-card"><img src="/assets/8fdc0ab5ab7c00c062805dc04ba85bdb.webp" alt="King of spades, drawn as a spiky graffiti skull" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/5a3e125fd0f47d32e49af02afea762de.webp" alt="Queen of spades, drawn as a graffiti butterfly" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/5b02a37ff1777897aa40f5af9e376158.webp" alt="Jack of spades, drawn as a graffiti rabbit" loading="lazy" decoding="async"></div></div></div></div>
+<div class="dk-row"><div class="dk-g"><span class="dk-k">Jokers</span><div class="dk-fan"><div class="dk-card"><img src="/assets/15726655eb3451b41251170c376a86da.webp" alt="Joker card on magenta: a mirrored portrait of Jinx" loading="lazy" decoding="async"></div><div class="dk-card"><img src="/assets/80bd24440fb91b0899b4b3ab1b9fccb0.webp" alt="Joker card on cyan: a mirrored portrait of Jinx" loading="lazy" decoding="async"></div></div></div><div class="dk-g"><span class="dk-k">Card back</span><div class="dk-cards"><div class="dk-card"><img src="/assets/08110227ca6b8fa95fb656d8116a466a.webp" alt="Card back: Jinx was here in neon graffiti on black, surrounded by scrawled symbols" loading="lazy" decoding="async"></div></div></div></div>
+</div>
+</section>
+
+<section class="pad sec" aria-label="The packaging">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">The packaging</h2></div>
+<div class="pkw"><div class="pk">
+<figure class="pk-f"><img src="/assets/8241ae46ede65067d8d240cbaf1640ad.webp" alt="Tuck box front: a pink line portrait of Jinx framed in neon, with Jinx and Card deck in cyan graffiti lettering" loading="lazy" decoding="async"><figcaption class="cap">Front</figcaption></figure>
+<figure class="pk-f"><img src="/assets/874e8c0414fed86b6d91a6d41ffab17e.webp" alt="Tuck box back and sides: neon graffiti doodles, Boom, a scrawled smile and Jinx’s symbols on black" loading="lazy" decoding="async"><figcaption class="cap">Back and sides</figcaption></figure>
+<figure class="pk-f pk-die"><img src="/assets/254902aaf92a7ae4f26f43a8b35b1160.webp" alt="Flat dieline of the Jinx tuck box, showing the front, back, sides and top and bottom flaps laid out" loading="lazy" decoding="async"><figcaption class="cap">Full box dieline</figcaption></figure>
+</div></div>
+</section>
+
+<section class="pad sec" aria-label="Mockups">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">Deal me in</h2></div>
+<figure style="margin: 0"><img src="/assets/9d1f10b9b5314f82acd79f683725edbd.webp" alt="Jinx cards tumbling out of an open tuck box: the ace of diamonds, king of spades, a joker and number cards floating mid-air above the box" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 4500 / 3400; border-radius: var(--radius-md); background: #474546"></figure>
+</section>
+
+<section class="pad sec" aria-label="Next project">
+<a class="next" href="/wayatl"><span style="display: flex; flex-direction: column; gap: var(--space-3)"><span class="cap">Back to the start</span><span style="font-family: var(--font-display); font-weight: 800; font-size: clamp(44px,4.6vw,64px); line-height: .96">WayATL</span></span><svg class="ak-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</section>
+
+
+
+<footer id="connect" aria-label="Let’s connect" style="box-sizing: border-box; width: 100%; margin-top: var(--space-9); padding: var(--space-9) clamp(24px,5vw,80px) var(--space-7); display: flex; flex-direction: column; gap: var(--space-7); background: var(--bg-sunken); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); font-family: var(--font-body)">
+<div class="ak-heading ak-heading--lg"><h2 class="ak-heading__title">Let’s connect</h2></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-7) clamp(40px,5vw,80px); align-items: stretch">
+<div style="min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5)">
+<p style="margin: -6px 0 0; font-size: 20px; font-weight: 300; line-height: 1.5; color: var(--text-secondary); max-width: 40ch">Have an idea, a question or just want to talk design? I’d love to hear from you.</p>
+<a href="mailto:uxdesign@archanakannan.org" target="_blank" rel="noopener noreferrer" aria-label="Email uxdesign@archanakannan.org (opens a new message in your email)" style="align-self: flex-start; display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--control-md); font-family: var(--font-sub); font-weight: 600; font-size: clamp(24px,2.4vw,32px); color: var(--text-strong); text-decoration: none; border-bottom: var(--border-width) solid var(--accent); padding-bottom: var(--space-1)">uxdesign@archanakannan.org <svg class="ak-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+<ul aria-label="Profiles" style="min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-bottom: var(--border-width) solid var(--border-subtle)">
+<li><a href="https://www.linkedin.com/in/archanakannanuxd/" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">LinkedIn <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+<li><a href="https://www.behance.net/archana_kannan" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">Behance <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+<li><a href="https://www.instagram.com/arxhie.ux/" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">Instagram <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+</ul>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); justify-content: space-between; align-items: center; padding-top: var(--space-5); border-top: var(--border-width) solid var(--border-subtle)">
+<p style="margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted)">© 2026 Archana Kannan</p>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 0 var(--space-5)">
+<a href="/" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">Home</a>
+<a href="/portfolio" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">Portfolio</a>
+<a href="/about" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">About</a>
+</nav>
+</div>
+</footer>
+
+</main>
+</div>
+
+</body>
+</html>

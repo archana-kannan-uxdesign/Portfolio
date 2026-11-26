@@ -1,0 +1,55 @@
+/* Shared scroll motion for the portfolio site (same style as the About page).
+   Content rises out of a soft blur as it enters, holds still while it's read,
+   then drifts up and fades as it leaves. Images rise with a slight scale.
+   The first section of each page (hero / overview) is left static so it's
+   fully visible on load. Off for reduced-motion users and browsers without
+   scroll-driven animation support. */
+
+@keyframes ak-rise {
+  0%       { opacity: 0; transform: translateY(96px); filter: blur(6px); }
+  15%, 90% { opacity: 1; transform: none; filter: blur(0); }
+  100%     { opacity: 0; transform: translateY(-40px); filter: blur(4px); }
+}
+
+@keyframes ak-img-rise {
+  0%       { opacity: 0; transform: translateY(120px) scale(.94); }
+  18%, 92% { opacity: 1; transform: none; }
+  100%     { opacity: .15; transform: translateY(-40px) scale(.98); }
+}
+
+@keyframes ak-media-drift {
+  from { transform: scale(1.12); }
+  to   { transform: scale(1); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* Text blocks */
+    .main section:not(:first-of-type) :is(.ak-heading, .lede, .ak-case, .ak-meta, .stat, .chart, .next, .num, blockquote, .feat > div:last-child > *) {
+      animation: ak-rise linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+
+    /* Images and project cards */
+    .main section:not(:first-of-type) :is(.ph, .ak-card) {
+      animation: ak-img-rise linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+
+    /* Portfolio grid tiles */
+    .tile {
+      animation: ak-img-rise linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+    .tile .ak-card__frame { overflow: clip; }
+    .tile .ak-card__media {
+      animation: ak-media-drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 60%;
+    }
+  }
+}

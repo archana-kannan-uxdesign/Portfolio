@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Archana Kannan</title>
+<meta name="description" content="About Archana Kannan, UI/UX designer: background, experience and how she works.">
+<link rel="canonical" href="https://archanakannan.org/about">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Archana Kannan">
+<meta property="og:title" content="About — Archana Kannan">
+<meta property="og:description" content="About Archana Kannan, UI/UX designer: background, experience and how she works.">
+<meta property="og:url" content="https://archanakannan.org/about">
+<meta property="og:image" content="https://archanakannan.org/assets/a1889a93f6cd6be676451e73ab9da8d9.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="icon" type="image/png" href="/assets/2f3749e4e9e6d088b02340126ade3fc6.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,600;1,600&amp;family=Syne:wght@800&amp;display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/components.css">
+
+<link rel="stylesheet" href="/css/site.css">
+<style>
+body{margin:0}
+.ak-heading h1.ak-heading__title{overflow-wrap:anywhere}
+.ph{background:var(--bg-sunken);border:1px dashed var(--border-strong);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;box-sizing:border-box;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.ph-k{color:var(--text-primary)}
+.pad{padding-left:clamp(24px,4vw,64px);padding-right:clamp(24px,4vw,64px)}
+.sec{margin-top:var(--space-8);padding-top:var(--space-8);border-top:var(--border-width) solid var(--border-subtle);display:flex;flex-direction:column;gap:var(--space-7)}
+.role{margin:0 0 var(--space-2);font-family:var(--font-sub);font-weight:600;font-size:24px;line-height:1.2;color:var(--text-strong)}
+.tags{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.exp-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.exp-row:last-child{padding-bottom:0}
+.exp-row{display:grid;grid-template-columns:minmax(140px,1fr) minmax(0,3fr);gap:var(--space-3) var(--space-7);padding:var(--space-7) 0;border-top:var(--border-width) solid var(--border-subtle)}
+.exp-row:first-child{border-top:0;padding-top:0}
+.exp-date{margin:0;padding-top:6px;font-size:14px;line-height:1.5;color:var(--text-muted);letter-spacing:.02em}
+.exp-body{display:flex;flex-direction:column;gap:var(--space-2);min-width:0}
+.exp-role{margin:0;font-family:var(--font-sub);font-weight:600;font-size:28px;line-height:1.15;color:var(--text-strong)}
+.exp-org{margin:0 0 var(--space-2);font-size:16px;line-height:1.4;color:var(--accent-soft)}
+.exp-desc{margin:0;font-size:16px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty}
+@media (max-width:767px){.exp-row{grid-template-columns:minmax(0,1fr)}.exp-role{font-size:24px}}
+.phil-big{flex:1 1 220px;margin:0;font-family:var(--font-sub);font-weight:600;font-size:40px;line-height:1.12;color:var(--text-strong);max-width:18ch}
+.phil{--phil-fs:clamp(24px,2.6vw,40px);--phil-w:calc(var(--phil-fs) * 20)}
+.phil-body p,.phil-statement,.phil-big{text-wrap:pretty}
+.phil-body{flex:0 1 var(--phil-w);min-width:0;display:flex;flex-direction:column;gap:var(--space-4)}
+.phil-body p{margin:0;font-size:16px;line-height:1.6;color:var(--text-secondary)}
+.phil-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-6) var(--space-8);align-items:flex-start;margin-top:0}
+.flip{position:relative;overflow:clip;padding:0;border:0}
+.flip-l{position:absolute;inset:0;background:var(--bg-sunken);border:1px dashed var(--border-strong);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;box-sizing:border-box;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.flip-l:nth-child(2){background:var(--charcoal);color:var(--text-primary)}
+.flip-l:nth-child(3){background:var(--lapis);color:var(--text-primary)}
+.flip-l:nth-child(n+2){clip-path:inset(100% 0 0 0)}
+@keyframes wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.gallery{height:clamp(440px,50vw,760px);overflow:clip;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);view-timeline-name:--gal;border-radius:var(--radius-md)}
+.phil-row + .gallery{margin-top:var(--space-7)}
+section[aria-label="My skills"] .ak-case{border-top:0;padding-top:0;max-width:none}
+.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-7)}
+@media (max-width:767px){.skills-grid{grid-template-columns:minmax(0,1fr)}}
+.gcol{display:flex;flex-direction:column;gap:var(--space-3);min-width:0;will-change:transform}
+.gcol-mid{transform:translateY(-18%)}
+.gimg{aspect-ratio:5 / 4;flex:none;background:var(--bg-sunken);border:1px dashed var(--border-strong);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.gimg:nth-child(even){background:var(--surface)}
+.gimg.has-img{padding:0;border:0;overflow:clip;display:block}
+.ph.has-img{padding:0;border:0;overflow:clip;display:block}
+.ph.has-img img{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width:767px){section[aria-label="Introduction"] .ph.has-img img{object-position:62% 0% !important}}
+/* No divider between the hero and the first section */
+section[aria-label="Introduction"] + .sec{border-top:0;margin-top:0;padding-top:var(--space-8)}
+.gimg.has-img img{display:block;width:100%;height:100%;object-fit:cover}
+@keyframes gal-up{from{transform:translateY(0)}to{transform:translateY(-36%)}}
+@keyframes gal-down{from{transform:translateY(-36%)}to{transform:translateY(0)}}
+.phil-label{flex:0 0 180px;margin:0;padding-top:var(--space-3);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft)}
+.phil-statement{width:100%;margin:0;align-self:stretch;font-size:var(--phil-fs);font-weight:300;line-height:1.25;letter-spacing:-0.005em;color:var(--text-strong)}
+.circled{position:relative;display:inline-block;white-space:nowrap}
+.circled svg{position:absolute;left:-12%;top:-22%;width:124%;height:144%;overflow:visible;pointer-events:none}
+.underlined{position:relative;display:inline-block;white-space:nowrap}
+.underlined svg{position:absolute;left:-2%;bottom:-0.32em;width:104%;height:.45em;overflow:visible;pointer-events:none}
+.side{flex:1 1 100%;min-width:0;box-sizing:border-box;border-bottom:var(--border-width) solid var(--border-subtle)}
+.main{flex:1 1 0;min-width:0}
+@media (min-width:1024px){.side{flex:0 0 var(--sidebar-width);position:sticky;top:0;align-self:flex-start;border-bottom:0}.main{border-left:var(--border-width) solid var(--border-subtle)}}
+@media (min-width:1280px){.side{flex-basis:var(--sidebar-width-wide)}}
+@media (max-width:767px){.phil-big{font-size:28px}}
+@keyframes rise{0%{opacity:0;transform:translateY(96px);filter:blur(6px)}15%,90%{opacity:1;transform:none;filter:blur(0)}100%{opacity:0;transform:translateY(-40px);filter:blur(4px)}}
+@keyframes img-rise{0%{opacity:0;transform:translateY(120px) scale(.94)}18%,92%{opacity:1;transform:none}100%{opacity:.15;transform:translateY(-40px) scale(.98)}}
+/* Pen marks reveal left-to-right with a clip wipe. (A stroke-dash draw broke here: with non-scaling strokes the dash length is measured in screen pixels, so the mark showed as doubled, then vanished.) */
+@keyframes draw{from{clip-path:inset(-20% 100% -20% -2%)}to{clip-path:inset(-20% -2% -20% -2%)}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){
+.sec .ak-heading,.phil-statement,.phil-big,.phil-body p,.sec .ak-case,.sec>p,.exp-row{animation:rise linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+.main .ph{animation:img-rise linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+.underlined svg,.circled svg{animation:draw linear both;animation-timeline:view();animation-range:entry 100% cover 55%}
+.gallery .gcol{animation:gal-up linear both;animation-timeline:--gal;animation-range:cover 0% cover 100%}
+.gallery .gcol-mid{animation-name:gal-down}
+.flip .flip-l:nth-child(2){animation:wipe linear both;animation-timeline:view();animation-range:cover 32% cover 46%}
+.flip .flip-l:nth-child(3){animation:wipe linear both;animation-timeline:view();animation-range:cover 54% cover 68%}
+.flip-b .flip-l:nth-child(2){animation-range:cover 36% cover 50%}
+.flip-b .flip-l:nth-child(3){animation-range:cover 58% cover 72%}
+.flip-c .flip-l:nth-child(2){animation-range:cover 40% cover 54%}
+.flip-c .flip-l:nth-child(3){animation-range:cover 62% cover 76%}
+}}
+</style>
+<style>
+body{margin:0}
+@keyframes ak-nav-drop{from{clip-path:inset(0 0 100% 0);transform:translateY(-6px)}to{clip-path:inset(0 0 0 0);transform:none}}
+@keyframes ak-nav-item{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+.sub-anim{animation:ak-nav-drop 420ms cubic-bezier(0,0,0.2,1) both}
+.sub-anim>li{animation:ak-nav-item 320ms cubic-bezier(0,0,0.2,1) both}
+.sub-anim>li:nth-child(1){animation-delay:80ms}
+.sub-anim>li:nth-child(2){animation-delay:120ms}
+.sub-anim>li:nth-child(3){animation-delay:160ms}
+.sub-anim>li:nth-child(4){animation-delay:200ms}
+.sub-anim>li:nth-child(5){animation-delay:240ms}
+.sub-anim>li:nth-child(6){animation-delay:280ms}
+}
+</style>
+<style>
+body{margin:0}
+</style>
+</head>
+<body style="margin:0">
+
+
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; background: var(--bg); color: var(--text-primary); font-family: var(--font-body); min-height: 100vh">
+<div class="side">
+
+
+<header style="box-sizing: border-box; width: 100%; padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-6); background: var(--bg); color: var(--text-primary); font-family: var(--font-body)">
+<a href="/" aria-label="Archana Kannan, home" style="display: flex; flex-direction: column; gap: var(--space-1); margin: -12px 0 0 -12px; text-decoration: none; color: var(--text-strong); align-self: flex-start">
+<img src="/assets/2f3749e4e9e6d088b02340126ade3fc6.png" alt="" width="48" height="41" style="display: block; width: 48px; height: auto; margin: 12px">
+<span style="font-family: var(--font-display); font-weight: 800; font-size: 32px; line-height: .95; padding-left: 12px">Archana<br>Kannan</span>
+</a>
+<div style="display: flex; flex-direction: column; gap: var(--space-2)">
+<p style="margin: 0; font-family: var(--font-sub); font-weight: 600; font-size: 24px; line-height: 1.1; color: var(--text-primary)">UI/UX Designer</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--text-muted)">Where logic and instinct have to agree.</p>
+</div>
+<nav aria-label="Main" style="margin-left: calc(var(--space-4) * -1)">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1)">
+<li><a href="/" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: transparent; color: var(--text-muted); border: 1px solid transparent">Home</a></li>
+<li><a href="/portfolio" aria-current="false" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: transparent; color: var(--text-muted); border: 1px solid transparent">Portfolio</a>
+
+</li>
+<li><a href="/about" aria-current="page" style="display: inline-flex; align-items: center; min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background-color var(--duration-fast), color var(--duration-fast); background: var(--surface-raised); color: var(--text-strong); border: 1px solid var(--border-strong)">About</a></li>
+<li><a href="/resume/Archana-Kannan-Resume.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--control-md); padding: 0 var(--space-4); box-sizing: border-box; border-radius: var(--radius-pill); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--text-muted); border: 1px solid transparent">Resume <svg class="ak-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">(opens PDF in a new tab)</span></a></li>
+</ul>
+</nav>
+<div style="display: flex; flex-direction: column; align-items: flex-start; padding-top: var(--space-6); border-top: var(--border-width) solid var(--border-subtle)">
+<a href="mailto:uxdesign@archanakannan.org" class="ak-btn ak-btn--secondary ak-btn--sm"><span>Get in touch</span><svg class="ak-icon ak-btn__icon-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+</header>
+
+</div>
+<main class="main" style="display: flex; flex-direction: column">
+
+<section aria-label="Introduction" style="position: relative; border-bottom: var(--border-width) solid var(--border-subtle)">
+<div class="ph has-img" style="width: 100%; height: clamp(380px, 50vw, 740px); border-radius: 0">
+<img src="/assets/108ad9136522c9d27f531987cabc1c17.webp" alt="Archana in her graduation gown, seated on a stone bench on the grass with her cap beside her" style="object-position: 50% 0%">
+</div>
+<div class="pad" style="position: absolute; inset: 0; min-width: 0; padding-bottom: var(--space-8); display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-5); background: linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 55%), linear-gradient(to right, rgba(0,0,0,.6) 0%, rgba(0,0,0,.35) 35%, rgba(0,0,0,0) 65%)">
+<div class="ak-heading ak-heading--lg"><h1 class="ak-heading__title">About Me</h1></div>
+<p style="margin: 0; font-size: 20px; font-weight: 300; line-height: 1.5; color: var(--text-strong); max-width: 32ch">A closer look at how I got here, how I think about design, and what that’s looked like in practice, from client work to the tools I reach for every day.</p>
+</div>
+</section>
+
+<section class="pad sec phil" aria-label="My design philosophy">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">Design philosophy</h2></div>
+<p class="phil-statement"><span>I’ve always thought of design as the place where <span class="underlined">logic and instinct have to agree<svg viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 12 C 70 7, 160 5, 230 8 C 290 10, 350 13, 397 9" fill="none" stroke="#F248CD" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span>. Every project I take on has to hold up two ways: it has to make sense structurally, and it has to feel right to the person using it. That’s the standard I hold my work to: not just if it functions, but if it</span> <span class="circled">resonates.<svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M14 30 C 8 14, 60 4, 112 5 C 162 6, 196 16, 193 32 C 190 48, 132 57, 84 56 C 42 55, 8 47, 10 33 C 11 24, 30 15, 58 11" fill="none" stroke="#F248CD" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span></p>
+</section>
+
+<section class="pad sec phil" aria-label="My origin story">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">Origin story</h2></div>
+<div class="phil-row">
+<p class="phil-big">Creativity to me was always a form, an expression, of synthesis.</p>
+<div class="phil-body">
+<p>I had this affinity to build, to add my unique vision to the world. From a young age I became immersed in drawing and crafting. My creative inclinations took me in many directions.</p>
+<p>I had interests in subjects like math and biology which some may consider unrelated to art, but that experience polished my approach to design.</p>
+<p>Art is a creative endeavor, but math taught me that there are hidden patterns that make it captivating; it taught me that even beauty can have structure.</p>
+<p>My experience with STEM allowed me to do what I have always done: synthesize, to mix art with science, spontaneity with structure and patterns.</p>
+<p>My seemingly unrelated interests uniquely made me gravitate towards User Experience design, where synthesis is the norm and creativity under pre-existing structure is rewarded.</p>
+</div>
+</div>
+<div class="gallery" role="group" aria-label="Photo wall">
+<div class="gcol">
+<div class="gimg has-img"><img src="/assets/4512dcc3e6f27fccc45d0262d1288f73.jpg" alt="Archana in her graduation cap and gown, seen from above on a lawn" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/4751cc49bf262a6db408b2ac4524394d.jpg" alt="Archana holding and kissing a tabby cat" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/b9e59c1792ff5ea565226c4658cd8e2d.jpg" alt="Studio portrait of Archana in a striped shirt" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/056b7a9f6556802cb1bc12ca9e2c40a6.jpg" alt="Archana in her graduation cap and gown holding a tabby cat" loading="lazy"></div>
+</div>
+<div class="gcol gcol-mid">
+<div class="gimg has-img"><img src="/assets/8e023faa46fbcec45462bc95c7300f7b.jpg" alt="Archana standing at a UBS podium" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/607da6fd941fbda642d22903d9dc64ed.jpg" alt="Archana in a SCAD graduation robe, seated beneath paper fan lamps" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/51a7d5b31cff6f6392c473d3bf84ea35.jpg" alt="Archana standing behind a table of match-day signs by a window" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/7541683e66206b55e963b8d7cdc6a17f.jpg" alt="Archana with four friends at an event" loading="lazy"></div>
+</div>
+<div class="gcol">
+<div class="gimg has-img"><img src="/assets/ae7fe992a757e2109066722c4b6653dd.jpg" alt="Archana holding up an ice cream cone" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/19110ad7318f73801839085790c4c213.jpg" alt="Archana beside her User Experience graduate showcase board" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/47cc37fe6010c481289e6810df4f193d.jpg" alt="Archana posing beside her portfolio exhibition board" loading="lazy"></div>
+<div class="gimg has-img"><img src="/assets/6a75d0bc8f8863da52f3ad19a0295ef8.jpg" alt="Archana in a black and yellow SCAD jersey, arms crossed" loading="lazy"></div>
+</div>
+</div>
+</section>
+
+<section class="pad sec" aria-label="My experience">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-5)">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">Experience</h2></div>
+<a href="/resume/Archana-Kannan-Resume.pdf" class="ak-btn ak-btn--secondary" target="_blank" rel="noopener noreferrer"><span>View resume</span><svg class="ak-icon ak-btn__icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+<ol class="exp-list">
+<li class="exp-row">
+<p class="exp-date">Nov 2026</p>
+<div class="exp-body">
+<h3 class="exp-role">Sneaker Designer</h3>
+<p class="exp-org">Nike × SCADpro</p>
+<p class="exp-desc">Chosen as one of 96 designers for a Nike design sprint celebrating Atlanta, I hand-painted an Air Force 1 that honors Atlanta’s Indian-American community, turning cultural motifs into its colorway and details. The shoe was selected for a permanent art installation at the Nike store at Lenox&nbsp;Square.</p>
+</div>
+</li>
+<li class="exp-row">
+<p class="exp-date">Jun – Aug 2026</p>
+<div class="exp-body">
+<h3 class="exp-role">UI/UX Design Intern</h3>
+<p class="exp-org">Apollo Mission Critical Engineering</p>
+<p class="exp-desc">Working in the commissioning engineering industry. Designing production-grade interfaces for mission-critical, tablet-first workflows; working directly with the founding team to take features from brief to shipped product. I coordinate closely with engineering to make sure design intent survives implementation, build out the design system component by component, and rely heavily on AI-assisted workflows to move from concept to high-fidelity prototypes.</p>
+</div>
+</li>
+<li class="exp-row">
+<p class="exp-date">Jan – May 2026</p>
+<div class="exp-body">
+<h3 class="exp-role">Lead UX Designer</h3>
+<p class="exp-org">FIFA World Cup × Metro Atlanta Chamber × SCADpro</p>
+<p class="exp-desc">Led UX research and design for a location-aware app guiding a multilingual, high-volume crowd through a major international event. I translated real mobility, safety, and accessibility requirements into navigation people can actually use under pressure, and coordinated with city, transit, and FIFA stakeholders to keep fan experience aligned with security and operations.</p>
+</div>
+</li>
+<li class="exp-row">
+<p class="exp-date">Jun – Aug 2025</p>
+<div class="exp-body">
+<h3 class="exp-role">Cross-Functional UX Designer</h3>
+<p class="exp-org">UBS Bank × SCADpro</p>
+<p class="exp-desc">Based in Lacoste, France, built a forward-facing, AI-driven prototype for the future of <a class="ak-link" href="https://www.ubs.com" target="_blank" rel="noopener noreferrer">ubs.com</a>. I moved between research and high-fidelity UI, balancing brand guidelines, business goals, and user expectations to shape long-term digital experience strategy rather than mere surface-level redesign.</p>
+</div>
+</li>
+<li class="exp-row">
+<p class="exp-date">Mar – May 2025</p>
+<div class="exp-body">
+<h3 class="exp-role">UX Research Lead</h3>
+<p class="exp-org">Deloitte × SCADpro</p>
+<p class="exp-desc">Led primary research for Deloitte’s work with USPS, reimagining direct mail as a modern, data-driven marketing channel in an industry losing ground to digital. I ran user surveys, synthesized findings into actionable insight, and translated that research directly into strategic design direction the client could act on.</p>
+</div>
+</li>
+<li class="exp-row">
+<p class="exp-date">Jan – Mar 2024</p>
+<div class="exp-body">
+<h3 class="exp-role">Junior Graphic Designer</h3>
+<p class="exp-org">Stiegler Ed Tech</p>
+<p class="exp-desc">Produced branding, layouts, and promotional assets used in real campaigns, working directly under a Creative Director while managing multiple concurrent projects with different timelines and priorities.</p>
+</div>
+</li>
+</ol>
+</section>
+
+<section class="pad sec" aria-label="My skills">
+<div class="ak-heading ak-heading--md"><h2 class="ak-heading__title">Skills</h2></div>
+<div class="skills-grid">
+<section class="ak-case"><h3 class="ak-case__label">Research and design</h3><div class="ak-case__body">
+<div class="tags">
+<span class="ak-tag ak-tag--neutral">User interviews</span><span class="ak-tag ak-tag--neutral">Usability testing</span><span class="ak-tag ak-tag--neutral">Surveys</span><span class="ak-tag ak-tag--neutral">Affinity mapping</span><span class="ak-tag ak-tag--neutral">Personas</span><span class="ak-tag ak-tag--neutral">User journey mapping</span><span class="ak-tag ak-tag--neutral">User experience design</span><span class="ak-tag ak-tag--neutral">UI design</span><span class="ak-tag ak-tag--neutral">Information architecture</span><span class="ak-tag ak-tag--neutral">User flows</span><span class="ak-tag ak-tag--neutral">Wireframing</span><span class="ak-tag ak-tag--neutral">Prototyping</span><span class="ak-tag ak-tag--neutral">Interaction design</span><span class="ak-tag ak-tag--neutral">Design systems</span><span class="ak-tag ak-tag--neutral">UX writing</span><span class="ak-tag ak-tag--neutral">WCAG accessibility</span><span class="ak-tag ak-tag--neutral">Wayfinding &amp; signage design</span><span class="ak-tag ak-tag--neutral">AI in UX design</span>
+</div>
+</div></section>
+<section class="ak-case"><h3 class="ak-case__label">Soft skills</h3><div class="ak-case__body">
+<div class="tags">
+<span class="ak-tag ak-tag--neutral">Leadership</span><span class="ak-tag ak-tag--neutral">Presentation &amp; storytelling</span><span class="ak-tag ak-tag--neutral">Cross-functional collaboration</span><span class="ak-tag ak-tag--neutral">Interpersonal communication</span><span class="ak-tag ak-tag--neutral">Attention to detail</span><span class="ak-tag ak-tag--neutral">Adaptability</span><span class="ak-tag ak-tag--neutral">Time management</span><span class="ak-tag ak-tag--neutral">Organization</span><span class="ak-tag ak-tag--neutral">Client relations</span><span class="ak-tag ak-tag--neutral">Critical thinking</span><span class="ak-tag ak-tag--neutral">Creativity</span><span class="ak-tag ak-tag--neutral">Mentorship</span><span class="ak-tag ak-tag--neutral">Empathy</span><span class="ak-tag ak-tag--neutral">Problem solving</span><span class="ak-tag ak-tag--neutral">Active listening</span><span class="ak-tag ak-tag--neutral">Giving &amp; receiving feedback</span>
+</div>
+</div></section>
+<section class="ak-case"><h3 class="ak-case__label">Visual</h3><div class="ak-case__body">
+<div class="tags">
+<span class="ak-tag ak-tag--neutral">Graphic design</span><span class="ak-tag ak-tag--neutral">Branding &amp; identity design</span><span class="ak-tag ak-tag--neutral">Illustration</span><span class="ak-tag ak-tag--neutral">Typography</span><span class="ak-tag ak-tag--neutral">Editorial &amp; print design</span><span class="ak-tag ak-tag--neutral">Visual hierarchy</span><span class="ak-tag ak-tag--neutral">Infographics</span><span class="ak-tag ak-tag--neutral">Layout &amp; composition</span><span class="ak-tag ak-tag--neutral">Color theory</span><span class="ak-tag ak-tag--neutral">Iconography</span><span class="ak-tag ak-tag--neutral">Art direction</span>
+</div>
+</div></section>
+<section class="ak-case"><h3 class="ak-case__label">Tools</h3><div class="ak-case__body">
+<div class="tags">
+<span class="ak-tag ak-tag--neutral">Figma</span><span class="ak-tag ak-tag--neutral">Adobe Suite</span><span class="ak-tag ak-tag--neutral">Procreate</span><span class="ak-tag ak-tag--neutral">Miro</span><span class="ak-tag ak-tag--neutral">Notion</span><span class="ak-tag ak-tag--neutral">Squarespace</span><span class="ak-tag ak-tag--neutral">Microsoft Office</span><span class="ak-tag ak-tag--neutral">Claude Design</span>
+</div>
+</div></section>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: var(--space-4)">
+<a href="/portfolio" class="ak-btn ak-btn--primary"><span>View portfolio</span><svg class="ak-icon ak-btn__icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="/resume/Archana-Kannan-Resume.pdf" class="ak-btn ak-btn--secondary" target="_blank" rel="noopener noreferrer"><span>View resume</span><svg class="ak-icon ak-btn__icon-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+</section>
+
+
+
+<footer id="connect" aria-label="Let’s connect" style="box-sizing: border-box; width: 100%; margin-top: var(--space-9); padding: var(--space-9) clamp(24px,5vw,80px) var(--space-7); display: flex; flex-direction: column; gap: var(--space-7); background: var(--bg-sunken); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); font-family: var(--font-body)">
+<div class="ak-heading ak-heading--lg"><h2 class="ak-heading__title">Let’s connect</h2></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-7) clamp(40px,5vw,80px); align-items: stretch">
+<div style="min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5)">
+<p style="margin: -6px 0 0; font-size: 20px; font-weight: 300; line-height: 1.5; color: var(--text-secondary); max-width: 40ch">Have an idea, a question or just want to talk design? I’d love to hear from you.</p>
+<a href="mailto:uxdesign@archanakannan.org" target="_blank" rel="noopener noreferrer" aria-label="Email uxdesign@archanakannan.org (opens a new message in your email)" style="align-self: flex-start; display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--control-md); font-family: var(--font-sub); font-weight: 600; font-size: clamp(24px,2.4vw,32px); color: var(--text-strong); text-decoration: none; border-bottom: var(--border-width) solid var(--accent); padding-bottom: var(--space-1)">uxdesign@archanakannan.org <svg class="ak-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+<ul aria-label="Profiles" style="min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-bottom: var(--border-width) solid var(--border-subtle)">
+<li><a href="https://www.linkedin.com/in/archanakannanuxd/" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">LinkedIn <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+<li><a href="https://www.behance.net/archana_kannan" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">Behance <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+<li><a href="https://www.instagram.com/arxhie.ux/" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; min-height: var(--space-8); border-top: var(--border-width) solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 12px; letter-spacing: .08em; text-transform: uppercase">Instagram <span style="color: var(--accent); display: inline-flex"><svg class="ak-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></a></li>
+</ul>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); justify-content: space-between; align-items: center; padding-top: var(--space-5); border-top: var(--border-width) solid var(--border-subtle)">
+<p style="margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted)">© 2026 Archana Kannan</p>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 0 var(--space-5)">
+<a href="/" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">Home</a>
+<a href="/portfolio" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">Portfolio</a>
+<a href="/about" style="display: inline-flex; align-items: center; min-height: var(--control-md); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none">About</a>
+</nav>
+</div>
+</footer>
+
+</main>
+</div>
+
+</body>
+</html>

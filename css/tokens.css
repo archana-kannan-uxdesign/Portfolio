@@ -1,0 +1,170 @@
+/* Archana Kannan design tokens — transcribed from the system's tokens.json for this canvas.
+   The system ships no tokens.css; component styles (components/bundle.css) read these variables.
+   Font stacks add Syne / Inter Tight as on-canvas stand-ins for the Adobe Fonts kit. */
+:root {
+  /* color */
+  --bg: #0D0D0D;
+  --bg-sunken: #000000;
+  --surface: #171717;
+  --surface-raised: #1F1F1F;
+  --border-subtle: #3D3D3D;
+  --border-strong: #808080;
+  --text-primary: #F2F2F2;
+  --text-strong: #FFFFFF;
+  --text-secondary: #E8E3E8;
+  --text-muted: #A6A6A6;
+  --accent: #F248CD;
+  --accent-hover: #F56AD6;
+  --accent-pressed: #D93DB8;
+  --accent-strong: #BF1477;
+  --accent-violet: #9071F2;
+  --accent-soft: #D1B2E2;
+  --on-accent: #0D0D0D;
+  --lapis: #355B7A;
+  --charcoal: #314250;
+  --focus-ring: var(--accent-soft);
+  --selection: var(--accent-strong);
+  --danger: #FF6B6B;
+  --success: #9CC3E3;
+
+  /* case-study palettes (use for content: diagrams, highlight bands, charts) */
+  --wayatl-blue-primary: #0078BC;
+  --wayatl-blue-secondary: #0095CC;
+  --wayatl-green-primary: #006939;
+  --wayatl-green-secondary: #008748;
+  --wayatl-red-primary: #D71E38;
+  --wayatl-red-secondary: #EE294C;
+  --laya-orange-primary: #FF6117;
+  --laya-amber-secondary: #FF9B10;
+  --laya-success: #64C253;
+  --laya-danger: #E2281B;
+  --laya-warning: #FAAD1E;
+  --laya-neutral: #3FA3DF;
+  --gradient-laya: linear-gradient(90deg, #FF6117 0%, #FF9B10 100%);
+  --jinx-pink-primary: #EB00CE;
+  --jinx-cyan-primary: #06F9FC;
+  --jinx-blue-sky: #00A2DF;
+  --jinx-blue-azure: #008DFF;
+  --jinx-violet: #8119DF;
+  --jinx-green: #6CEA2B;
+  --jinx-plum: #862A58;
+  --jinx-green-light: #95E76C;
+  --murk-lime-primary: #B4E500;
+  --murk-gray-secondary: #E8E8E7;
+  --murk-white: #FFFFFF;
+  --murk-black: #010506;
+
+  /* type */
+  --font-display: snaga-unicase-display, "Snaga Unicase Display", "Syne", "Arial Black", sans-serif;
+  --font-sub: forma-djr-banner, "Forma DJR Banner", "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-body: helvetica-neue-lt-pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* spacing */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+
+  /* radius */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* shadow */
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 0 1px rgba(242, 72, 205, 0.45), 0 8px 32px rgba(242, 72, 205, 0.28);
+
+  /* layout */
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --page-margin-sm: 16px;
+  --page-margin-md: 24px;
+  --page-margin-lg: 48px;
+  --sidebar-width: 300px; /* system value 360px — narrowed for this site */
+  --sidebar-width-wide: 340px; /* system value 420px — narrowed for this site */
+  --container-max: 1600px;
+  --measure: 68ch;
+  --measure-subhead: 40ch;
+
+  /* size */
+  --control-sm: 32px;
+  --control-md: 44px;
+  --control-lg: 56px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --border-width: 1px;
+  --focus-width: 2px;
+
+  /* motion */
+  --duration-instant: 80ms;
+  --duration-fast: 160ms;
+  --duration-base: 240ms;
+  --duration-slow: 480ms;
+  --duration-marquee: 30s;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-expressive: cubic-bezier(0.7, 0, 0.2, 1);
+
+  /* opacity */
+  --opacity-disabled: 0.4;
+  --opacity-scrim: 0.72;
+}
+
+/* Case-study themes: set data-theme on the case-study page root. Only the accent roles change. */
+[data-theme="wayatl"] {
+  --accent: var(--wayatl-blue-secondary);
+  --accent-hover: #33AADB;
+  --accent-pressed: #0087C0;
+  --accent-strong: var(--wayatl-blue-primary);
+  --accent-violet: var(--wayatl-blue-secondary);
+  --accent-soft: var(--wayatl-blue-primary);
+  --focus-ring: var(--accent-soft);
+  --selection: var(--accent-strong);
+}
+[data-theme="laya"] {
+  --accent: var(--laya-orange-primary);
+  --accent-hover: var(--laya-amber-secondary);
+  --accent-pressed: #E5530F;
+  --accent-strong: #C2410C;
+  --accent-violet: var(--laya-amber-secondary);
+  --accent-soft: var(--laya-amber-secondary);
+  --focus-ring: var(--accent-soft);
+  --selection: var(--accent-strong);
+}
+[data-theme="jinx"] {
+  --accent: var(--jinx-pink-primary);
+  --accent-hover: #FF33E0;
+  --accent-pressed: #E000C4;
+  --accent-strong: var(--jinx-violet);
+  --accent-violet: var(--jinx-cyan-primary);
+  --accent-soft: var(--jinx-cyan-primary);
+  --focus-ring: var(--accent-soft);
+  --selection: var(--accent-strong);
+}
+[data-theme="murk"] {
+  --accent: var(--murk-lime-primary);
+  --accent-hover: #C4F01A;
+  --accent-pressed: #A2CE00;
+  --accent-strong: #557000;
+  --accent-violet: var(--murk-lime-primary);
+  --accent-soft: var(--murk-lime-primary);
+  --on-accent: var(--murk-black);
+  --focus-ring: var(--accent-soft);
+  --selection: var(--accent-strong);
+}
+/* scad-accommodate, infographic: placeholders in the system — they render in the site palette. */

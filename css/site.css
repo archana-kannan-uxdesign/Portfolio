@@ -1,0 +1,18 @@
+/* Site-only additions for the published build */
+html{background:var(--bg)}
+/* below the desktop breakpoint the sidebar sits on top, so the page content needs its own full-width row */
+@media (max-width:1023px){body .main{flex:1 1 100%}}
+/* tab panels stack in one grid cell: let them shrink to the column instead of the widest panel */
+.rx>.rx-panels{min-width:0;max-width:100%}
+.rx-panels>.rx-panel{min-width:0}
+@media (max-width:600px){.dz-table{display:block;max-width:100%;overflow-x:auto}}
+/* keep the footer email on screen on phones */
+@media (max-width:600px){footer#connect a[href^="mailto:"]{font-size:clamp(17px,5vw,24px)!important;max-width:100%}}
+.is-soon{cursor:default}
+.is-soon .ak-card__media{filter:grayscale(1) brightness(.5)}
+.is-soon:hover .ak-card__media{transform:none}
+.is-soon:hover .ak-card__frame{box-shadow:none}
+.is-soon:hover .ak-card__title{text-decoration:none}
+.soon-row{display:inline-flex;flex-wrap:wrap;gap:var(--space-2)}
+.bento .ak-card__meta.soon-badge{border-color:var(--border-strong);color:var(--text-strong)}
+.soon-tag{margin-left:var(--space-2);padding:2px 6px;border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-pill);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
